@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1393613169 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
+	<GL/glew.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/freeglut.h>
+	<iostream>
+
+1374498682 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glew-1.10.0\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1368276560 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\freeglut\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1368276560 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\freeglut\include\gl\freeglut_std.h
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1368276560 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\freeglut\include\gl\freeglut_ext.h
+	<stdarg.h>
+
