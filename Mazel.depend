@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1393613169 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
+1393618097 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -28,4 +28,14 @@
 
 1368276560 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\freeglut\include\gl\freeglut_ext.h
 	<stdarg.h>
+
+1393702164 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shader.cpp
+	"Shader.hpp"
+	<fstream>
+	<iostream>
+
+1393701955 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shader.hpp
+	<GL/glew.h>
+	<GL/gl.h>
+	<string>
 
