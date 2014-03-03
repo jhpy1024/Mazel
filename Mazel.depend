@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1393618097 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
+1393868699 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<GL/glu.h>
 	<GL/freeglut.h>
 	<iostream>
+	"Game.hpp"
 
 1374498682 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glew-1.10.0\include\gl\glew.h
 	<stddef.h>
@@ -38,4 +39,10 @@
 	<GL/glew.h>
 	<GL/gl.h>
 	<string>
+
+1393868599 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+
+1393868685 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+	"Game.hpp"
+	<iostream>
 

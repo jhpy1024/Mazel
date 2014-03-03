@@ -5,16 +5,35 @@
 
 #include <iostream>
 
+#include "Game.hpp"
+
 int oldTimeElapsed = 0;
 
-void handleInput(unsigned char key, int x, int y)
-{
+Game game;
 
+void keyPressed(unsigned char key, int x, int y)
+{
+    game.keyPressed(key, x, y);
+}
+
+void specialKeyPressed(int key, int x, int y)
+{
+    game.specialKeyPressed(key, x, y);
+}
+
+void specialKeyReleased(int key, int x, int y)
+{
+    game.specialKeyReleased(key, x, y);
+}
+
+void mousePressed(int button, int state, int x, int y)
+{
+    game.mousePressed(button, state, x, y);
 }
 
 void update(int delta)
 {
-
+    game.update(delta);
 }
 
 int calculateDelta()
@@ -31,7 +50,7 @@ void display()
     int delta = calculateDelta();
     update(delta);
 
-
+    game.render();
 
     glutSwapBuffers();
 }
@@ -52,14 +71,18 @@ void createWindow()
 
 void setupCallbacks()
 {
-    glutKeyboardFunc(&handleInput);
+    glutKeyboardFunc(&keyPressed);
+    glutSpecialFunc(&specialKeyPressed);
+    glutSpecialUpFunc(&specialKeyReleased);
+    glutMouseFunc(&mousePressed);
     glutDisplayFunc(&display);
     glutIdleFunc(&display);
 }
 
 void setupGL()
 {
-
+    glDisable(GL_DEPTH_TEST);
+    game.setupGL();
 }
 
 int main(int argc, char** argv)

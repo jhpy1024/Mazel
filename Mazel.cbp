@@ -17,6 +17,8 @@
 					<Add option="-g" />
 					<Add directory="Libraries/freeglut/include" />
 					<Add directory="Libraries/glew-1.10.0/include" />
+					<Add directory="Include" />
+					<Add directory="Libraries/glm" />
 				</Compiler>
 				<Linker>
 					<Add library="glew32" />
@@ -43,6 +45,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Include/Shader.hpp" />
+		<Unit filename="Source/Shader.cpp" />
 		<Unit filename="Source/main.cpp" />
 		<Extensions>
 			<code_completion />
