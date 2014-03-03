@@ -23,6 +23,8 @@ private:
     void createFragmentShader(const std::string& source);
     void createProgram();
 
+    void checkShaderCompilation(GLuint shader);
+
 private:
     GLuint m_VertexShader;
     GLuint m_FragmentShader;

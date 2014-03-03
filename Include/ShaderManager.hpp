@@ -6,26 +6,18 @@
 
 #include "Shader.hpp"
 
-enum class ShaderType
-{
-    Sprite,
-};
-
 class ShaderManager
 {
 public:
-    ShaderManager();
+    void addShader(const std::string& shaderId, std::shared_ptr<Shader> shader);
 
-    std::shared_ptr<Shader> getShader(ShaderType type);
+    std::shared_ptr<Shader> getShader(const std::string& shaderId);
 
-    void useShader(ShaderType type);
-    void unuseShader(ShaderType type);
-
-private:
-    void createShaders();
+    void useShader(const std::string& shaderId);
+    void unuseShader(const std::string& shaderId);
 
 private:
-    std::map<ShaderType, std::shared_ptr<Shader>> m_Shaders;
+    std::map<std::string, std::shared_ptr<Shader>> m_Shaders;
 };
 
 #endif // SHADER_MANAGER_HPP

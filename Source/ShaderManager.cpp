@@ -1,26 +1,21 @@
 #include "ShaderManager.hpp"
 
-ShaderManager::ShaderManager()
+std::shared_ptr<Shader> ShaderManager::getShader(const std::string& shaderId)
 {
-    createShaders();
+    return m_Shaders[shaderId];
 }
 
-std::shared_ptr<Shader> ShaderManager::getShader(ShaderType type)
+void ShaderManager::addShader(const std::string& shaderId, std::shared_ptr<Shader> shader)
 {
-    return m_Shaders[type];
+    m_Shaders[shaderId] = shader;
 }
 
-void ShaderManager::createShaders()
+void ShaderManager::useShader(const std::string& shaderId)
 {
-    m_Shaders[ShaderType::Sprite] = std::make_shared<Shader>("Shaders/sprite.vert", "Shaders/sprite.frag");
+    m_Shaders[shaderId]->use();
 }
 
-void ShaderManager::useShader(ShaderType type)
+void ShaderManager::unuseShader(const std::string& shaderId)
 {
-    m_Shaders[type]->use();
-}
-
-void ShaderManager::unuseShader(ShaderType type)
-{
-    m_Shaders[type]->unuse();
+    m_Shaders[shaderId]->unuse();
 }

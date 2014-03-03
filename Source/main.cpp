@@ -7,9 +7,12 @@
 
 #include "Game.hpp"
 
+const int WIDTH = 1024;
+const int HEIGHT = 600;
+
 int oldTimeElapsed = 0;
 
-Game game;
+Game game(WIDTH, HEIGHT);
 
 void keyPressed(unsigned char key, int x, int y)
 {
@@ -64,7 +67,7 @@ void initGlew()
 
 void createWindow()
 {
-    glutInitWindowSize(1024, 600);
+    glutInitWindowSize(WIDTH, HEIGHT);
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
     glutCreateWindow("Mazel!");
 }
@@ -98,4 +101,3 @@ int main(int argc, char** argv)
 
     return 0;
 }
-

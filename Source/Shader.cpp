@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 Shader::Shader(const std::string& vertexFile, const std::string& fragmentFile)
 {
@@ -11,6 +12,27 @@ Shader::Shader(const std::string& vertexFile, const std::string& fragmentFile)
     createVertexShader(vertexSrc);
     createFragmentShader(fragmentSrc);
     createProgram();
+}
+
+void Shader::checkShaderCompilation(GLuint shader)
+{
+    GLint isCompiled = 0;
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &isCompiled);
+
+    if (isCompiled == GL_FALSE)
+    {
+        GLint maxLength = 0;
+        glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &maxLength);
+
+        std::vector<GLchar> infoLog(maxLength);
+        glGetShaderInfoLog(shader, maxLength, &maxLength, &infoLog[0]);
+
+        glDeleteShader(shader);
+
+        for (auto& c : infoLog)
+            std::cerr << c;
+        std::cerr << std::endl;
+    }
 }
 
 GLint Shader::getAttribLocation(const std::string& name)
@@ -36,6 +58,8 @@ void Shader::createVertexShader(const std::string& source)
 
     glShaderSource(m_VertexShader, 1, &sourceCStr, NULL);
     glCompileShader(m_VertexShader);
+
+    checkShaderCompilation(m_VertexShader);
 }
 
 void Shader::createFragmentShader(const std::string& source)
@@ -46,6 +70,8 @@ void Shader::createFragmentShader(const std::string& source)
 
     glShaderSource(m_FragmentShader, 1, &sourceCStr, NULL);
     glCompileShader(m_FragmentShader);
+
+    checkShaderCompilation(m_FragmentShader);
 }
 
 void Shader::createProgram()
@@ -69,7 +95,7 @@ std::string Shader::getFileContents(const std::string& file) const
     {
         while (std::getline(fileStream, currentLine))
         {
-            fileContents += currentLine;
+            fileContents += currentLine += "\n";
         }
     }
     else

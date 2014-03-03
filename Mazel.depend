@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1393868699 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
+1393872485 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -30,19 +30,409 @@
 1368276560 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\freeglut\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1393702164 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shader.cpp
+1393871820 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shader.cpp
 	"Shader.hpp"
 	<fstream>
 	<iostream>
+	<vector>
 
-1393701955 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shader.hpp
+1393871334 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shader.hpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<string>
 
-1393868599 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1393872388 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+	"ShaderManager.hpp"
+	<glm/glm.hpp>
 
-1393868737 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1393872429 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
+	<glm/gtc/matrix_transform.hpp>
+
+1393872464 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
+	"ShaderManager.hpp"
+
+1393872352 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shadermanager.hpp
+	<map>
+	<memory>
+	"Shader.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\glm.hpp
+	"detail/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\_fixes.hpp
+	<cmath>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\fwd.hpp
+	"detail/type_int.hpp"
+	"detail/type_float.hpp"
+	"detail/type_vec.hpp"
+	"detail/type_mat.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_int.hpp
+	"setup.hpp"
+	<cstdint>
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\setup.hpp
+	<cassert>
+	<intrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<smmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_float.hpp
+	"setup.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec.hpp
+	"precision.hpp"
+	"type_int.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\precision.hpp
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat.hpp
+	"precision.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\vec2.hpp
+	"detail/type_vec2.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec2.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\_swizzle.hpp
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\_swizzle_func.hpp
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec2.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\vec3.hpp
+	"detail/type_vec3.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec3.hpp
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec3.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\vec4.hpp
+	"detail/type_vec4.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec4.hpp
+	"setup.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec4.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat2x2.hpp
+	"detail/type_mat2x2.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat2x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x2.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat2x2.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat2x3.hpp
+	"detail/type_mat2x3.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat2x3.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x3.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat2x3.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat2x4.hpp
+	"detail/type_mat2x4.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat2x4.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat2x4.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat2x4.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat3x2.hpp
+	"detail/type_mat3x2.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat3x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x2.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat3x2.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat3x3.hpp
+	"detail/type_mat3x3.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat3x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x3.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat3x3.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat3x4.hpp
+	"detail/type_mat3x4.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat3x4.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat3x4.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat3x4.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat4x2.hpp
+	"detail/type_mat4x2.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat4x2.hpp
+	"../fwd.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x2.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat4x2.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat4x3.hpp
+	"detail/type_mat4x3.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat4x3.hpp
+	"../fwd.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	"type_mat4x3.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat4x3.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\mat4x4.hpp
+	"detail/type_mat4x4.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat4x4.hpp
+	"../fwd.hpp"
+	"type_vec4.hpp"
+	"type_mat.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_mat4x4.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\trigonometric.hpp
+	"detail/func_trigonometric.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\_vectorize.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec1.hpp
+	"../fwd.hpp"
+	"type_vec.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_vec1.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\exponential.hpp
+	"detail/func_exponential.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_exponential.hpp
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<cmath>
+	"func_exponential.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_exponential.inl
+	"func_vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cassert>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_vector_relational.hpp
+	"precision.hpp"
+	"setup.hpp"
+	"func_vector_relational.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_vector_relational.inl
+	<limits>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\common.hpp
+	"detail/func_common.hpp"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_common.hpp
+	"setup.hpp"
+	"precision.hpp"
+	"type_int.hpp"
+	"_fixes.hpp"
+	"func_common.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_common.inl
+	"func_vector_relational.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\packing.hpp
+	"detail/func_packing.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_packing.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"func_packing.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_packing.inl
+	"func_common.hpp"
+	"type_half.hpp"
+	"../fwd.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\type_half.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\geometric.hpp
+	"detail/func_geometric.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_geometric.hpp
+	"type_vec3.hpp"
+	"func_geometric.inl"
+
+1390008574 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_geometric.inl
+	"func_exponential.hpp"
+	"func_common.hpp"
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	"type_float.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\matrix.hpp
+	"detail/func_matrix.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_matrix.hpp
+	"../detail/precision.hpp"
+	"../detail/setup.hpp"
+	"../detail/type_mat.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	"func_matrix.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\vector_relational.hpp
+	"detail/func_vector_relational.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\integer.hpp
+	"detail/func_integer.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_integer.hpp
+	"setup.hpp"
+	"func_integer.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\detail\func_integer.inl
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_int.hpp"
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"matrix_transform.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
 
