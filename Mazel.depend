@@ -28,38 +28,37 @@
 1368276560 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\freeglut\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1393963831 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shader.cpp
+1393966539 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shader.cpp
 	"Shader.hpp"
 	<fstream>
 	<iostream>
 	<vector>
 
-1393962944 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shader.hpp
+1393966421 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shader.hpp
 	<string>
 	<map>
 	<GL/glew.h>
 	<GL/gl.h>
 
-1393963569 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1393966576 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
-	<memory>
-	"Shader.hpp"
+	"ShaderManager.hpp"
 
-1393963877 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1393964500 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
 
-1393872464 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
+1393966071 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
 	"ShaderManager.hpp"
 
-1393872352 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shadermanager.hpp
-	<map>
-	<memory>
+1393966009 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shadermanager.hpp
 	"Shader.hpp"
+	<string>
+	<memory>
 
 1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\glm.hpp
 	"detail/_fixes.hpp"

@@ -1,20 +1,25 @@
 #include "Game.hpp"
 
 #include <iostream>
+#include <memory>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Shader.hpp"
+
 Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
-
 {
 
 }
 
 void Game::init()
 {
+    m_ShaderManager.addShader("Simple", std::make_shared<Shader>("Shaders/simple.vert", "Shaders/simple.frag"));
+    m_ShaderManager.useShader("Simple");
+
     m_ProjMatrix = glm::mat4
     (
         glm::vec4(2.f / m_Width, 0.f, 0.f, 0.f),
@@ -25,9 +30,6 @@ void Game::init()
     m_ViewMatrix = glm::mat4(1.f);
     m_ModelMatrix = glm::mat4(1.f);
     m_MvpMatrix = m_ProjMatrix * m_ViewMatrix * m_ModelMatrix;
-
-    m_Shader = std::unique_ptr<Shader>(new Shader("Shaders/simple.vert", "Shaders/simple.frag"));
-    m_Shader->use();
 
     float vertices[] =
     {
@@ -52,16 +54,16 @@ void Game::init()
     glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
-    auto posAttrib = m_Shader->getAttribLocation("in_Position");
+    auto posAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Position");
     glEnableVertexAttribArray(posAttrib);
     glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
     glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
-    auto colorAttrib = m_Shader->getAttribLocation("in_Color");
+    auto colorAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Color");
     glEnableVertexAttribArray(colorAttrib);
     glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
 
-    auto mvpLocation = m_Shader->getUniformLocation("in_MvpMatrix");
+    auto mvpLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_MvpMatrix");
     glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(m_MvpMatrix));
 }
 

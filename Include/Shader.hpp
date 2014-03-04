@@ -11,6 +11,7 @@ class Shader
 {
 public:
     Shader(const std::string& vertShader, const std::string& fragShader);
+    ~Shader();
 
     void use();
     void unuse();
@@ -24,6 +25,7 @@ private:
     void createVertexShader(const std::string& source);
     void createFragmentShader(const std::string& source);
     void createProgram();
+    void freeResources();
 
     void checkLinkStatus();
     void checkCompileStatus(GLuint shader);

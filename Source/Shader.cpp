@@ -12,6 +12,12 @@ Shader::Shader(const std::string& vertShader, const std::string& fragShader)
     createVertexShader(vertSrc);
     createFragmentShader(fragSrc);
     createProgram();
+    freeResources();
+}
+
+Shader::~Shader()
+{
+    glDeleteProgram(m_Program);
 }
 
 void Shader::use()
@@ -50,6 +56,15 @@ void Shader::createProgram()
     glLinkProgram(m_Program);
 
     checkLinkStatus();
+}
+
+void Shader::freeResources()
+{
+    glDetachShader(m_Program, m_VertexShader);
+    glDetachShader(m_Program, m_FragmentShader);
+
+    glDeleteShader(m_VertexShader);
+    glDeleteShader(m_FragmentShader);
 }
 
 void Shader::createFragmentShader(const std::string& source)
