@@ -30,25 +30,27 @@
 1368276560 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\freeglut\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1393871820 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shader.cpp
+1393878177 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shader.cpp
 	"Shader.hpp"
 	<fstream>
 	<iostream>
 	<vector>
 
-1393871334 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shader.hpp
+1393873958 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\shader.hpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<string>
 
-1393872388 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1393947920 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	"ShaderManager.hpp"
 	<glm/glm.hpp>
 
-1393872429 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1393948409 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtx/string_cast.hpp>
 
 1393872464 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
 	"ShaderManager.hpp"
@@ -435,4 +437,79 @@
 	"../geometric.hpp"
 	"../trigonometric.hpp"
 	"../matrix.hpp"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\type_ptr.hpp
+	"../gtc/quaternion.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\quaternion.hpp
+	"../mat3x3.hpp"
+	"../mat4x4.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../gtc/constants.hpp"
+	"quaternion.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\constants.hpp
+	"../detail/setup.hpp"
+	"constants.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\constants.inl
+	<limits>
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\quaternion.inl
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"../exponential.hpp"
+	<limits>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtc\type_ptr.inl
+	<cstring>
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\string_cast.hpp
+	"../glm.hpp"
+	"../gtx/integer.hpp"
+	"../gtx/quaternion.hpp"
+	<string>
+	"string_cast.inl"
+
+1391891300 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\integer.hpp
+	"../glm.hpp"
+	"integer.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\integer.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\quaternion.hpp
+	"../glm.hpp"
+	"../gtc/constants.hpp"
+	"../gtc/quaternion.hpp"
+	"../gtx/norm.hpp"
+	"quaternion.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\norm.hpp
+	"../glm.hpp"
+	"../gtx/quaternion.hpp"
+	"norm.inl"
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\norm.inl
+
+1389479879 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\quaternion.inl
+	<limits>
+
+1388012472 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\string_cast.inl
+	<cstdarg>
+	<cstdio>
 
