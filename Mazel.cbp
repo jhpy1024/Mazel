@@ -45,13 +45,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Include/Game.hpp" />
-		<Unit filename="Include/Shader.hpp" />
-		<Unit filename="Include/ShaderManager.hpp" />
-		<Unit filename="Source/Game.cpp" />
-		<Unit filename="Source/Shader.cpp" />
-		<Unit filename="Source/ShaderManager.cpp" />
-		<Unit filename="Source/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
