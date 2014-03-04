@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1393949471 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
+1393950401 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
 	<GL/glew.h>
 	<GL/freeglut.h>
 	<iostream>
+	"Game.hpp"
 
 1374498682 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glew-1.10.0\include\gl\glew.h
 	<stddef.h>
@@ -38,16 +39,12 @@
 	<GL/gl.h>
 	<string>
 
-1393947920 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
-	"ShaderManager.hpp"
-	<glm/glm.hpp>
+1393950342 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 
-1393948409 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1393950471 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
-	<glm/gtc/matrix_transform.hpp>
-	<glm/gtc/type_ptr.hpp>
-	<glm/gtx/string_cast.hpp>
+	<GL/gl.h>
 
 1393872464 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
 	"ShaderManager.hpp"

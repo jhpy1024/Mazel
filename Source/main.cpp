@@ -3,36 +3,67 @@
 
 #include <iostream>
 
+#include "Game.hpp"
+
 const int WIDTH = 1024;
 const int HEIGHT = 600;
 const char* TITLE = "Mazel!";
 
+int oldTimeElapsed;
+
+Game game(WIDTH, HEIGHT);
+
 void specialDown(int key, int x, int y)
 {
-
+    game.specialKeyPressed(key, x, y);
 }
 
 void specialUp(int key, int x, int y)
 {
-
+    game.specialKeyReleased(key, x, y);
 }
 
 void keyboard(unsigned char key, int x, int y)
 {
-
+    game.keyEvent(key, x, y);
 }
 
 void mouse(int button, int state, int x, int y)
 {
+    game.mouseEvent(button, state, x, y);
+}
 
+int calculateDelta()
+{
+    int timeElapsed = glutGet(GLUT_ELAPSED_TIME);
+    int delta = timeElapsed - oldTimeElapsed;
+    oldTimeElapsed = timeElapsed;
+
+    return delta;
+}
+
+void update(int delta)
+{
+    game.update(delta);
 }
 
 void display()
 {
+    int delta = calculateDelta();
+    update(delta);
+
     glClearColor(0.f, 0.f, 0.f, 0.f);
     glClear(GL_COLOR_BUFFER_BIT);
 
+    game.display();
+
     glutSwapBuffers();
+}
+
+void reshape(int width, int height)
+{
+    glViewport(0, 0, width, height);
+    game.resize(width, height);
 }
 
 void initGlew()
@@ -51,6 +82,7 @@ void setupCallbacks()
     glutSpecialFunc(specialDown);
     glutSpecialUpFunc(specialUp);
     glutIdleFunc(display);
+    glutReshapeFunc(reshape);
 }
 
 void setupWindow()
@@ -64,14 +96,16 @@ void setupWindow()
 void initGlut(int argc, char** argv)
 {
     glutInit(&argc, argv);
-    setupCallbacks();
     setupWindow();
+    setupCallbacks();
 }
 
 int main(int argc, char** argv)
 {
     initGlut(argc, argv);
     initGlew();
+
+    game.init();
 
     glutMainLoop();
 }
