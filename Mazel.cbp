@@ -45,6 +45,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Include/Game.hpp" />
+		<Unit filename="Source/Game.cpp" />
+		<Unit filename="Source/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
