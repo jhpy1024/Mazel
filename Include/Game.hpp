@@ -7,6 +7,10 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 
+#include <memory>
+
+#include "Shader.hpp"
+
 class Game
 {
 public:
@@ -33,9 +37,7 @@ private:
     glm::mat4 m_ModelMatrix;
     glm::mat4 m_MvpMatrix;
 
-    GLuint m_VertexShader;
-    GLuint m_FragmentShader;
-    GLuint m_Program;
+    std::unique_ptr<Shader> m_Shader;
 
     GLuint m_VertexBuffer;
     GLuint m_ColorBuffer;
