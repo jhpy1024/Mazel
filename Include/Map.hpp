@@ -7,20 +7,35 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 
+#include "ShaderManager.hpp"
+
+enum Tile
+{
+    RedTile,
+    GreenTile,
+    BlueTile,
+};
+
 class Map
 {
 public:
-    Map(const std::string& file);
+    Map(const std::string& file, ShaderManager& shaderManager);
 
     int getWidth() const;
     int getHeight() const;
     int getTileWidth() const;
     int getTileHeight() const;
 
+    void init();
+    void display();
+
 private:
-    void parseFile(const std::string& file);
+    void parseFile();
     void parseVariable(int& var, const std::string& varName, const std::string& line);
     void parseTiles(const std::string& line);
+
+    void setupVertices();
+    void setupColors();
 
 private:
     GLuint m_VertexBuffer;
@@ -31,8 +46,16 @@ private:
     int m_TileWidth;
     int m_TileHeight;
 
-    // (x, y) = m_Tiles[y * num cols + x]
+    std::vector<float> m_Vertices;
+    std::vector<float> m_Colors;
+
+    // If (0,0) is the bottom left of a tile:
+    // -> the tile at (x,y) is m_Tiles[(m_Height - y) * m_Width + x]
     std::vector<int> m_Tiles;
+
+    std::string m_FileName;
+
+    ShaderManager& m_ShaderManager;
 };
 
 #endif // MAP_HPP

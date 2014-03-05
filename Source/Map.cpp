@@ -5,23 +5,106 @@
 
 #include "Utils.hpp"
 
-Map::Map(const std::string& file)
+Map::Map(const std::string& file, ShaderManager& shaderManager)
+    : m_FileName(file)
+    , m_ShaderManager(shaderManager)
 {
-    parseFile(file);
 
-    std::cout << "== Loaded map ==" << std::endl;
-    std::cout << "Width: " << m_Width << std::endl;
-    std::cout << "Height: " << m_Height << std::endl;
-    std::cout << "Tile Width: " << m_TileWidth << std::endl;
-    std::cout << "Tile Height: " << m_TileHeight << std::endl;
-    std::cout << "================" << std::endl;
 }
 
-void Map::parseFile(const std::string& file)
+void Map::init()
+{
+    parseFile();
+
+    m_ShaderManager.useShader("Simple");
+
+    setupVertices();
+    setupColors();
+}
+
+void Map::display()
+{
+    glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
+}
+
+void Map::setupVertices()
+{
+    for (int x = 0; x < m_Width; ++x)
+    {
+        for (int y = 0; y < m_Height; ++y)
+        {
+            // Bottom left vertex
+            m_Vertices.insert(m_Vertices.end(),
+                {x * m_TileWidth, y * m_TileHeight});
+
+            // Bottom right vertex
+            m_Vertices.insert(m_Vertices.end(),
+                {x * m_TileHeight + m_TileWidth, y * m_TileHeight});
+
+            // Top right vertex
+            m_Vertices.insert(m_Vertices.end(),
+                {x * m_TileWidth + m_TileWidth, y * m_TileHeight + m_TileHeight});
+
+            // Top right vertex
+            m_Vertices.insert(m_Vertices.end(),
+                {x * m_TileWidth + m_TileWidth, y * m_TileHeight + m_TileHeight});
+
+            // Top left vertex
+            m_Vertices.insert(m_Vertices.end(),
+                {x * m_TileWidth, y * m_TileHeight + m_TileHeight});
+
+            // Bottom left vertex
+            m_Vertices.insert(m_Vertices.end(),
+                {x * m_TileWidth, y * m_TileHeight});
+        }
+    }
+
+    glGenBuffers(1, &m_VertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Vertices.size(), &m_Vertices[0], GL_STATIC_DRAW);
+
+    auto posAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Position");
+    glEnableVertexAttribArray(posAttrib);
+    glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
+}
+
+void Map::setupColors()
+{
+    for (auto t : m_Tiles)
+    {
+        switch (t)
+        {
+        case RedTile:
+            m_Colors.insert(m_Colors.end(),
+                {1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f});
+            break;
+        case GreenTile:
+            m_Colors.insert(m_Colors.end(),
+                {0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f});
+            break;
+        case BlueTile:
+            m_Colors.insert(m_Colors.end(),
+                {0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f});
+            break;
+        default:
+            break;
+        }
+    }
+
+    glGenBuffers(1, &m_ColorBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Colors.size(), &m_Colors[0], GL_STATIC_DRAW);
+
+    auto colorAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Color");
+    glEnableVertexAttribArray(colorAttrib);
+    glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
+}
+
+void Map::parseFile()
 {
     std::string currentLine;
 
-    std::ifstream fileStream(file);
+    std::ifstream fileStream(m_FileName);
 
     if (fileStream.is_open())
     {
@@ -37,7 +120,7 @@ void Map::parseFile(const std::string& file)
     }
     else
     {
-        std::cerr << "Error loading map file: " << file << std::endl;
+        std::cerr << "Error loading map file: " << m_FileName << std::endl;
     }
 }
 
