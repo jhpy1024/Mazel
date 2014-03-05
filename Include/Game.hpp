@@ -8,6 +8,7 @@
 #include <GL/gl.h>
 
 #include "ShaderManager.hpp"
+#include "Map.hpp"
 
 class Game
 {
@@ -40,6 +41,8 @@ private:
     glm::mat4 m_MvpMatrix;
 
     ShaderManager m_ShaderManager;
+
+    Map m_TestMap;
 };
 
 #endif // GAME_HPP

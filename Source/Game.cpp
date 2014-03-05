@@ -11,6 +11,7 @@
 Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
+    , m_TestMap("Maps/testMap.txt")
 {
 
 }
