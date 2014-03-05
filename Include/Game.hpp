@@ -27,6 +27,10 @@ public:
     void resize(int width, int height);
 
 private:
+    void loadShaders();
+    void setupMatrices();
+
+private:
     int m_Width;
     int m_Height;
 
@@ -34,9 +38,6 @@ private:
     glm::mat4 m_ViewMatrix;
     glm::mat4 m_ModelMatrix;
     glm::mat4 m_MvpMatrix;
-
-    GLuint m_VertexBuffer;
-    GLuint m_ColorBuffer;
 
     ShaderManager m_ShaderManager;
 };

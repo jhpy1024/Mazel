@@ -40,17 +40,19 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1393966576 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394033355 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
 	"ShaderManager.hpp"
 
-1393964500 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1393967548 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
+	<memory>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
+	"Shader.hpp"
 
 1393966071 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
 	"ShaderManager.hpp"
