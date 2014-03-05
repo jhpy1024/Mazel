@@ -32,7 +32,7 @@ void Map::parseFile(const std::string& file)
             parseVariable(m_TileWidth, "tilewidth", currentLine);
             parseVariable(m_TileHeight, "tileheight", currentLine);
 
-            //parseTiles(currentLine);
+            parseTiles(currentLine);
         }
     }
     else
@@ -48,7 +48,7 @@ void Map::parseVariable(int& var, const std::string& varName, const std::string&
         auto colonPos = line.find(':');
 
         if (colonPos == line.npos)
-            std::cerr << "Error parsing variable: " << varName << ". Missing comma seperator" << std::endl;
+            std::cerr << "Error parsing variable: " << varName << ". Missing colon seperator" << std::endl;
 
         auto value = line.substr(colonPos + 1);
         var = util::stringToNum<int>(value);
@@ -57,7 +57,29 @@ void Map::parseVariable(int& var, const std::string& varName, const std::string&
 
 void Map::parseTiles(const std::string& line)
 {
+    // If the line contains a comma we assume that this
+    // is a line containing tiles.
+    if (line.find(',') != line.npos)
+    {
+        auto commaPos = line.find_first_of(',');
+        auto firstTileStr = line.substr(0, commaPos);
+        m_Tiles.push_back(util::stringToNum<int>(firstTileStr));
 
+        while (commaPos != line.npos)
+        {
+            std::string tileStr;
+            auto nextCommaPos = line.find_first_of(',', commaPos + 1);
+
+            if (nextCommaPos == line.npos)
+                tileStr = line.substr(commaPos + 1);
+            else
+                tileStr = line.substr(commaPos + 1, nextCommaPos - 1);
+
+            m_Tiles.push_back(util::stringToNum<int>(tileStr));
+
+            commaPos = nextCommaPos;
+        }
+    }
 }
 
 int Map::getWidth() const
