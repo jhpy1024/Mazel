@@ -134,7 +134,7 @@ void Map::parseFile()
 
 void Map::parseVariable(int& var, const std::string& varName, const std::string& line)
 {
-    auto varSubString = line.substr(0, varName.size();
+    auto varSubString = line.substr(0, varName.size());
 
     if (varSubString == varName)
     {
