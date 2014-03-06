@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1393950631 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
+1394135712 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\main.cpp
 	<GL/glew.h>
 	<GL/freeglut.h>
 	<iostream>
@@ -40,14 +40,16 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394036534 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394135042 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
 	"ShaderManager.hpp"
 	"Map.hpp"
+	"Entity.hpp"
+	<vector>
 
-1394132350 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394136615 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
@@ -523,7 +525,7 @@
 	<GL/gl.h>
 	"ShaderManager.hpp"
 
-1394133385 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
+1394136954 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
 	"Map.hpp"
 	<fstream>
 	<iostream>
@@ -535,4 +537,14 @@
 
 1394036350 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\utils.inl
 	<sstream>
+
+1394135549 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
+	<GL/glew.h>
+	<GL/gl.h>
+	<vector>
+	<string>
+	<glm/glm.hpp>
+
+1394135640 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
+	"Entity.hpp"
 

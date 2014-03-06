@@ -9,6 +9,9 @@
 
 #include "ShaderManager.hpp"
 #include "Map.hpp"
+#include "Entity.hpp"
+
+#include <vector>
 
 class Game
 {
@@ -26,6 +29,11 @@ public:
     void display();
 
     void resize(int width, int height);
+
+    // ====== Getters ======
+    const Map& getMap() const;
+    ShaderManager& getShaderManager();
+    // =====================
 
 private:
     void loadShaders();

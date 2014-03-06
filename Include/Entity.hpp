@@ -5,6 +5,7 @@
 #include <GL/gl.h>
 
 #include <vector>
+#include <string>
 
 #include <glm/glm.hpp>
 
@@ -12,7 +13,8 @@ class Game;
 class Entity
 {
 public:
-    Entity(Game* game, glm::vec2 position, glm::vec2 size);
+    Entity(Game* game, glm::vec2 position, glm::vec2 size, const std::string& id);
+    virtual ~Entity();
 
     void init();
 
@@ -31,6 +33,8 @@ public:
     glm::vec2 getPosition() const;
     glm::vec2 getSize() const;
 
+    std::string getID() const;
+
 protected:
     Game* m_Game;
 
@@ -42,6 +46,8 @@ protected:
 
     glm::vec2 m_Position;
     glm::vec2 m_Size;
+
+    std::string m_ID;
 };
 
 #endif // ENTITY_HPP

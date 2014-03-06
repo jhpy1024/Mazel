@@ -45,14 +45,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Include/Entity.hpp" />
 		<Unit filename="Include/Game.hpp" />
 		<Unit filename="Include/Map.hpp" />
 		<Unit filename="Include/Shader.hpp" />
 		<Unit filename="Include/ShaderManager.hpp" />
+		<Unit filename="Include/TestEntity.hpp" />
 		<Unit filename="Include/Utils.hpp" />
 		<Unit filename="Include/Utils.inl" />
 		<Unit filename="Shaders/simple.frag" />
 		<Unit filename="Shaders/simple.vert" />
+		<Unit filename="Source/Entity.cpp" />
 		<Unit filename="Source/Game.cpp" />
 		<Unit filename="Source/Map.cpp" />
 		<Unit filename="Source/Shader.cpp" />

@@ -31,7 +31,7 @@ void Map::display()
 
 void Map::setupVertices()
 {
-    for (int y = m_Height; y >= 0; --y)
+    for (int y = m_Height - 1; y >= 0; --y)
     {
         for (int x = 0; x < m_Height; ++x)
         {

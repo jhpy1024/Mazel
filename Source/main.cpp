@@ -6,7 +6,7 @@
 #include "Game.hpp"
 
 const int WIDTH = 1024;
-const int HEIGHT = 600;
+const int HEIGHT = 640;
 const char* TITLE = "Mazel!";
 
 int oldTimeElapsed;

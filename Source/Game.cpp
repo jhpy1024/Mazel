@@ -82,3 +82,13 @@ void Game::resize(int width, int height)
     m_Width = width;
     m_Height = height;
 }
+
+const Map& Game::getMap() const
+{
+    return m_TestMap;
+}
+
+ShaderManager& Game::getShaderManager()
+{
+    return m_ShaderManager;
+}
