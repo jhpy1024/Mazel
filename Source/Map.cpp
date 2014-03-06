@@ -19,7 +19,9 @@ void Map::init()
     m_ShaderManager.useShader("Simple");
 
     setupVertices();
+    setupVertexBuffer();
     setupColors();
+    setupColorBuffer();
 }
 
 void Map::display()
@@ -58,7 +60,10 @@ void Map::setupVertices()
                 {x * m_TileWidth, y * m_TileHeight});
         }
     }
+}
 
+void Map::setupVertexBuffer()
+{
     glGenBuffers(1, &m_VertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Vertices.size(), &m_Vertices[0], GL_STATIC_DRAW);
@@ -90,7 +95,10 @@ void Map::setupColors()
             break;
         }
     }
+}
 
+void Map::setupColorBuffer()
+{
     glGenBuffers(1, &m_ColorBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Colors.size(), &m_Colors[0], GL_STATIC_DRAW);
@@ -126,7 +134,9 @@ void Map::parseFile()
 
 void Map::parseVariable(int& var, const std::string& varName, const std::string& line)
 {
-    if (line.substr(0, varName.size()) == varName)
+    auto varSubString = line.substr(0, varName.size();
+
+    if (varSubString == varName)
     {
         auto colonPos = line.find(':');
 

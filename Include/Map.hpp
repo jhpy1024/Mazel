@@ -35,7 +35,10 @@ private:
     void parseTiles(const std::string& line);
 
     void setupVertices();
+    void setupVertexBuffer();
+
     void setupColors();
+    void setupColorBuffer();
 
 private:
     GLuint m_VertexBuffer;
