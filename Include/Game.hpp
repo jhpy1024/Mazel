@@ -9,7 +9,7 @@
 
 #include "ShaderManager.hpp"
 #include "Map.hpp"
-#include "Entity.hpp"
+#include "TestEntity.hpp"
 
 #include <vector>
 

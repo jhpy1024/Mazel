@@ -16,6 +16,11 @@ public:
 
     void update(int delta) override;
     void display() override;
+
+    void move(glm::vec2 direction);
+
+private:
+    const float m_Speed;
 };
 
 #endif // TEST_ENTITY_HPP
