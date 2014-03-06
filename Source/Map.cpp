@@ -22,24 +22,6 @@ void Map::init()
     setupVertexBuffer();
     setupColors();
     setupColorBuffer();
-
-    for (int i = 0; i < m_Tiles.size(); ++i)
-    {
-        if (i % 10 == 0 && i != 0)
-            std::cout << std::endl;
-        std::cout << m_Tiles[i];
-    }
-
-    std::cout << std::endl;
-
-    for (int i = 0; i < m_Colors.size(); ++i)
-    {
-        if (i % 24 == 0 && i != 0)
-            std::cout << std::endl;
-        std::cout << m_Colors[i] << " ";
-    }
-
-    std::cout << std::endl;
 }
 
 void Map::display()
