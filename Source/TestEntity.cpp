@@ -3,6 +3,9 @@
 
 #include <GL/freeglut.h>
 
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 TestEntity::TestEntity(Game* game, glm::vec2 position, glm::vec2 size)
     : Entity(game, position, size, "TestEntity")
     , m_MovingUp(false)
@@ -11,6 +14,7 @@ TestEntity::TestEntity(Game* game, glm::vec2 position, glm::vec2 size)
     , m_MovingRight(false)
     , m_LastTimeMoved(0)
     , m_MoveDelay(50.f)
+    , m_Rotation(0.f)
 {
 
 }
@@ -127,6 +131,10 @@ void TestEntity::move(int delta)
 void TestEntity::update(int delta)
 {
     move(delta);
+
+    m_Rotation += 0.1f;
+    if (m_Rotation >= 6.28f)
+        m_Rotation = 0.f;
 }
 
 void TestEntity::display()
@@ -135,4 +143,14 @@ void TestEntity::display()
     setupVertexAttrib();
     setupColorAttrib();
     glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
+}
+
+void TestEntity::setModelMatrix()
+{
+    m_ModelMatrix = glm::translate(glm::mat4(1.f), glm::vec3(m_Position, 0.f));
+    m_ModelMatrix = glm::rotate(m_ModelMatrix, m_Rotation, glm::vec3(0.f, 0.f, 1.f));
+    auto mvpMatrix = m_Game->getProjectionMatrix() * m_Game->getViewMatrix() * m_ModelMatrix;
+
+    auto mvpLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_MvpMatrix");
+    glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(mvpMatrix));
 }

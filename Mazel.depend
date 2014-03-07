@@ -555,11 +555,13 @@
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394221601 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394224374 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
 
-1394221609 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
+1394223965 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
 	"Entity.hpp"
 

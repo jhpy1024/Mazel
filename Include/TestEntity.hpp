@@ -26,6 +26,8 @@ public:
 private:
     void move(int delta);
 
+    void setModelMatrix() override;
+
 private:
     bool m_MovingUp;
     bool m_MovingDown;
@@ -34,6 +36,8 @@ private:
 
     int m_LastTimeMoved;
     const float m_MoveDelay;
+
+    float m_Rotation;
 };
 
 #endif // TEST_ENTITY_HPP
