@@ -60,6 +60,7 @@
 		<Unit filename="Source/Map.cpp" />
 		<Unit filename="Source/Shader.cpp" />
 		<Unit filename="Source/ShaderManager.cpp" />
+		<Unit filename="Source/TestEntity.cpp" />
 		<Unit filename="Source/main.cpp" />
 		<Extensions>
 			<code_completion />

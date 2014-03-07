@@ -35,31 +35,38 @@ void Map::setupVertices()
     {
         for (int x = 0; x < m_Height; ++x)
         {
-            // Bottom left vertex
-            m_Vertices.insert(m_Vertices.end(),
-                {x * m_TileWidth, y * m_TileHeight});
-
-            // Bottom right vertex
-            m_Vertices.insert(m_Vertices.end(),
-                {x * m_TileHeight + m_TileWidth, y * m_TileHeight});
-
-            // Top right vertex
-            m_Vertices.insert(m_Vertices.end(),
-                {x * m_TileWidth + m_TileWidth, y * m_TileHeight + m_TileHeight});
-
-            // Top right vertex
-            m_Vertices.insert(m_Vertices.end(),
-                {x * m_TileWidth + m_TileWidth, y * m_TileHeight + m_TileHeight});
-
-            // Top left vertex
-            m_Vertices.insert(m_Vertices.end(),
-                {x * m_TileWidth, y * m_TileHeight + m_TileHeight});
-
-            // Bottom left vertex
-            m_Vertices.insert(m_Vertices.end(),
-                {x * m_TileWidth, y * m_TileHeight});
+            createBottomLeftVertex(x, y);
+            createBottomRightVertex(x, y);
+            createTopRightVertex(x, y);
+            createTopRightVertex(x, y);
+            createTopLeftVertex(x, y);
+            createBottomLeftVertex(x, y);
         }
     }
+}
+
+void Map::createTopLeftVertex(int x, int y)
+{
+    m_Vertices.insert(m_Vertices.end(),
+        {x * m_TileWidth, y * m_TileHeight + m_TileHeight});
+}
+
+void Map::createTopRightVertex(int x, int y)
+{
+    m_Vertices.insert(m_Vertices.end(),
+        {x * m_TileWidth + m_TileWidth, y * m_TileHeight + m_TileHeight});
+}
+
+void Map::createBottomRightVertex(int x, int y)
+{
+    m_Vertices.insert(m_Vertices.end(),
+        {x * m_TileHeight + m_TileWidth, y * m_TileHeight});
+}
+
+void Map::createBottomLeftVertex(int x, int y)
+{
+    m_Vertices.insert(m_Vertices.end(),
+        {x * m_TileWidth, y * m_TileHeight});
 }
 
 void Map::setupVertexBuffer()

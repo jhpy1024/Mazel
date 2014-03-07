@@ -30,10 +30,8 @@ public:
 
     void resize(int width, int height);
 
-    // ====== Getters ======
     const Map& getMap() const;
     ShaderManager& getShaderManager();
-    // =====================
 
 private:
     void loadShaders();

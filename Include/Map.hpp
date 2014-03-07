@@ -40,6 +40,11 @@ private:
     void setupColors();
     void setupColorBuffer();
 
+    void createBottomLeftVertex(int x, int y);
+    void createBottomRightVertex(int x, int y);
+    void createTopLeftVertex(int x, int y);
+    void createTopRightVertex(int x, int y);
+
 private:
     GLuint m_VertexBuffer;
     GLuint m_ColorBuffer;
