@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394209743 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394212063 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -49,7 +49,7 @@
 	"TestEntity.hpp"
 	<vector>
 
-1394138914 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394213798 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
@@ -518,14 +518,14 @@
 	<cstdarg>
 	<cstdio>
 
-1394211564 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
+1394213777 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
 	<string>
 	<vector>
 	<GL/glew.h>
 	<GL/gl.h>
 	"ShaderManager.hpp"
 
-1394138871 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
+1394213525 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
 	"Map.hpp"
 	<fstream>
 	<iostream>
@@ -538,20 +538,20 @@
 1394036350 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\utils.inl
 	<sstream>
 
-1394135549 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
+1394211970 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<vector>
 	<string>
 	<glm/glm.hpp>
 
-1394135640 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
+1394212043 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
 	"Entity.hpp"
 
-1394138865 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394213179 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 
-1394137277 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
+1394213765 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
 	"Entity.hpp"
 

@@ -49,6 +49,8 @@ private:
     ShaderManager m_ShaderManager;
 
     Map m_TestMap;
+
+    TestEntity m_TestEntity;
 };
 
 #endif // GAME_HPP

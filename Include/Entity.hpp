@@ -24,6 +24,9 @@ public:
     virtual void setupVertexBuffer() = 0;
     virtual void setupColorBuffer() = 0;
 
+    virtual void setupVertexAttrib() = 0;
+    virtual void setupColorAttrib() = 0;
+
     virtual void update(int delta) = 0;
     virtual void display() = 0;
 

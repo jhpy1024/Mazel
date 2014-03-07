@@ -19,9 +19,11 @@ void Entity::init()
 {
     setupVertices();
     setupVertexBuffer();
+    setupVertexAttrib();
 
     setupColors();
     setupColorBuffer();
+    setupColorAttrib();
 }
 
 void Entity::setPosition(glm::vec2 position)

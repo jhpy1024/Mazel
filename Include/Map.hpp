@@ -36,14 +36,18 @@ private:
 
     void setupVertices();
     void setupVertexBuffer();
+    void setupVertexAttrib();
 
     void setupColors();
     void setupColorBuffer();
+    void setupColorAttrib();
 
     void createBottomLeftVertex(int x, int y);
     void createBottomRightVertex(int x, int y);
     void createTopLeftVertex(int x, int y);
     void createTopRightVertex(int x, int y);
+
+    void setOffset();
 
 private:
     GLuint m_VertexBuffer;

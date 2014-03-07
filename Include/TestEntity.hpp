@@ -14,10 +14,16 @@ public:
     void setupVertexBuffer() override;
     void setupColorBuffer() override;
 
+    void setupVertexAttrib() override;
+    void setupColorAttrib() override;
+
     void update(int delta) override;
     void display() override;
 
     void move(glm::vec2 direction);
+
+private:
+    void setOffset();
 
 private:
     const float m_Speed;

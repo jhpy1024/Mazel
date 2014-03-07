@@ -20,13 +20,25 @@ void Map::init()
 
     setupVertices();
     setupVertexBuffer();
+    setupVertexAttrib();
+
     setupColors();
     setupColorBuffer();
+    setupColorAttrib();
 }
 
 void Map::display()
 {
+    setOffset();
+    setupVertexAttrib();
+    setupColorAttrib();
     glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
+}
+
+void Map::setOffset()
+{
+    auto offsetLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_Offset");
+    glUniform2f(offsetLocation, 0.f, 0.f);
 }
 
 void Map::setupVertices()
@@ -74,7 +86,11 @@ void Map::setupVertexBuffer()
     glGenBuffers(1, &m_VertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Vertices.size(), &m_Vertices[0], GL_STATIC_DRAW);
+}
 
+void Map::setupVertexAttrib()
+{
+    glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
     auto posAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Position");
     glEnableVertexAttribArray(posAttrib);
     glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
@@ -109,7 +125,11 @@ void Map::setupColorBuffer()
     glGenBuffers(1, &m_ColorBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Colors.size(), &m_Colors[0], GL_STATIC_DRAW);
+}
 
+void Map::setupColorAttrib()
+{
+    glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
     auto colorAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Color");
     glEnableVertexAttribArray(colorAttrib);
     glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
