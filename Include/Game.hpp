@@ -33,6 +33,9 @@ public:
     const Map& getMap() const;
     ShaderManager& getShaderManager();
 
+    glm::mat4 getProjectionMatrix() const;
+    glm::mat4 getViewMatrix() const;
+
 private:
     void loadShaders();
     void setupMatrices();

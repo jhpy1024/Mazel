@@ -3,12 +3,15 @@
 #include <fstream>
 #include <iostream>
 
+#include <glm/gtc/type_ptr.hpp>
+
 #include "Utils.hpp"
 #include "Game.hpp"
 
 Map::Map(const std::string& file, Game* game)
     : m_FileName(file)
     , m_Game(game)
+    , m_ModelMatrix(1.f)
 {
 
 }
@@ -31,9 +34,18 @@ void Map::init()
 void Map::display()
 {
     setOffset();
+    setModelMatrix();
     setupVertexAttrib();
     setupColorAttrib();
     glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
+}
+
+void Map::setModelMatrix()
+{
+    auto mvpMatrix = m_Game->getProjectionMatrix() * m_Game->getViewMatrix() * m_ModelMatrix;
+
+    auto mvpLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_MvpMatrix");
+    glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(mvpMatrix));
 }
 
 void Map::setOffset()

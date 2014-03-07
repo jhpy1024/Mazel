@@ -7,6 +7,8 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 
+#include <glm/glm.hpp>
+
 #include "ShaderManager.hpp"
 
 enum Tile
@@ -49,6 +51,7 @@ private:
     void createTopRightVertex(int x, int y);
 
     void setOffset();
+    void setModelMatrix();
 
 private:
     GLuint m_VertexBuffer;
@@ -67,6 +70,8 @@ private:
     std::string m_FileName;
 
     Game* m_Game;
+
+    glm::mat4 m_ModelMatrix;
 };
 
 #endif // MAP_HPP

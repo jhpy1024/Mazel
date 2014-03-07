@@ -86,6 +86,16 @@ void Game::resize(int width, int height)
     m_Height = height;
 }
 
+glm::mat4 Game::getProjectionMatrix() const
+{
+    return m_ProjMatrix;
+}
+
+glm::mat4 Game::getViewMatrix() const
+{
+    return m_ViewMatrix;
+}
+
 const Map& Game::getMap() const
 {
     return m_TestMap;
