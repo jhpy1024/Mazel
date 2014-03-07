@@ -43,6 +43,9 @@ public:
     std::string getID() const;
 
 protected:
+    virtual void setModelMatrix();
+
+protected:
     Game* m_Game;
 
     GLuint m_VertexBuffer;
@@ -53,6 +56,7 @@ protected:
 
     glm::vec2 m_Position;
     glm::vec2 m_Size;
+    glm::mat4 m_ModelMatrix;
 
     std::string m_ID;
 };

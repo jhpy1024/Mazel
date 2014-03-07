@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "Utils.hpp"
 #include "Game.hpp"
@@ -33,7 +34,6 @@ void Map::init()
 
 void Map::display()
 {
-    setOffset();
     setModelMatrix();
     setupVertexAttrib();
     setupColorAttrib();
@@ -46,12 +46,6 @@ void Map::setModelMatrix()
 
     auto mvpLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_MvpMatrix");
     glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(mvpMatrix));
-}
-
-void Map::setOffset()
-{
-    auto offsetLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_Offset");
-    glUniform2f(offsetLocation, 0.f, 0.f);
 }
 
 void Map::setupVertices()

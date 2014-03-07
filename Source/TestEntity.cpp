@@ -131,14 +131,8 @@ void TestEntity::update(int delta)
 
 void TestEntity::display()
 {
-    setOffset();
+    setModelMatrix();
     setupVertexAttrib();
     setupColorAttrib();
     glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
-}
-
-void TestEntity::setOffset()
-{
-    auto offsetLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_Offset");
-    glUniform2f(offsetLocation, m_Position.x, m_Position.y);
 }

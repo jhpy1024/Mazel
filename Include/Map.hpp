@@ -50,7 +50,6 @@ private:
     void createTopLeftVertex(int x, int y);
     void createTopRightVertex(int x, int y);
 
-    void setOffset();
     void setModelMatrix();
 
 private:

@@ -518,7 +518,7 @@
 	<cstdarg>
 	<cstdio>
 
-1394219492 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
+1394221623 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
 	<string>
 	<vector>
 	<GL/glew.h>
@@ -526,11 +526,14 @@
 	<glm/glm.hpp>
 	"ShaderManager.hpp"
 
-1394213809 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
+1394221406 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
 	"Map.hpp"
 	<fstream>
 	<iostream>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
 	"Utils.hpp"
+	"Game.hpp"
 
 1394036307 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\utils.hpp
 	<string>
@@ -539,21 +542,24 @@
 1394036350 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\utils.inl
 	<sstream>
 
-1394214233 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
+1394221585 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<vector>
 	<string>
 	<glm/glm.hpp>
 
-1394215188 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
+1394221498 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
 	"Entity.hpp"
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"Game.hpp"
 
-1394215942 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394221420 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
 
-1394215448 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
+1394221609 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
 	"Entity.hpp"
 

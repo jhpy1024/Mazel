@@ -24,8 +24,6 @@ public:
     void display() override;
 
 private:
-    void setOffset();
-
     void move(int delta);
 
 private:
