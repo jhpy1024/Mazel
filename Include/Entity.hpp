@@ -27,7 +27,11 @@ public:
     virtual void setupVertexAttrib() = 0;
     virtual void setupColorAttrib() = 0;
 
-    virtual void update(int delta) = 0;
+    virtual void keyEvent(unsigned char key);
+    virtual void specialKeyPressed(int key);
+    virtual void specialKeyReleased(int key);
+
+    virtual void update(int delta);
     virtual void display() = 0;
 
     void setPosition(glm::vec2 position);

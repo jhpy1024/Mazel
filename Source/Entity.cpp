@@ -26,6 +26,22 @@ void Entity::init()
     setupColorAttrib();
 }
 
+void Entity::keyEvent(unsigned char key)
+{
+}
+
+void Entity::specialKeyPressed(int key)
+{
+}
+
+void Entity::specialKeyReleased(int key)
+{
+}
+
+void Entity::update(int delta)
+{
+}
+
 void Entity::setPosition(glm::vec2 position)
 {
     m_Position = position;

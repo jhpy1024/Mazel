@@ -12,7 +12,7 @@ Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
     , m_TestMap("Maps/testMap.txt", m_ShaderManager)
-    , m_TestEntity(this, glm::vec2(m_Width / 2.f, m_Height / 2.f), glm::vec2(50.f))
+    , m_TestEntity(this, glm::vec2(m_Width / 2.f, m_Height / 2.f), glm::vec2(32.f))
 {
 
 }
@@ -51,7 +51,7 @@ void Game::setupMatrices()
 
 void Game::keyEvent(unsigned char key, int x, int y)
 {
-
+    m_TestEntity.keyEvent(key);
 }
 
 void Game::mouseEvent(int button, int state, int x, int y)
@@ -61,12 +61,12 @@ void Game::mouseEvent(int button, int state, int x, int y)
 
 void Game::specialKeyPressed(int key, int x, int y)
 {
-
+    m_TestEntity.specialKeyPressed(key);
 }
 
 void Game::specialKeyReleased(int key, int x, int y)
 {
-
+    m_TestEntity.specialKeyReleased(key);
 }
 
 void Game::update(int delta)

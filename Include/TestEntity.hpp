@@ -17,16 +17,25 @@ public:
     void setupVertexAttrib() override;
     void setupColorAttrib() override;
 
+    void specialKeyPressed(int key) override;
+    void specialKeyReleased(int key) override;
+
     void update(int delta) override;
     void display() override;
-
-    void move(glm::vec2 direction);
 
 private:
     void setOffset();
 
+    void move(int delta);
+
 private:
-    const float m_Speed;
+    bool m_MovingUp;
+    bool m_MovingDown;
+    bool m_MovingLeft;
+    bool m_MovingRight;
+
+    int m_LastTimeMoved;
+    const float m_MoveDelay;
 };
 
 #endif // TEST_ENTITY_HPP
