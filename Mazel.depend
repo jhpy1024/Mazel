@@ -526,7 +526,7 @@
 	<glm/glm.hpp>
 	"ShaderManager.hpp"
 
-1394221406 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
+1394221629 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
 	"Map.hpp"
 	<fstream>
 	<iostream>
@@ -555,7 +555,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394221420 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394221601 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
