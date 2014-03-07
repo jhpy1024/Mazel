@@ -4,10 +4,11 @@
 #include <iostream>
 
 #include "Utils.hpp"
+#include "Game.hpp"
 
-Map::Map(const std::string& file, ShaderManager& shaderManager)
+Map::Map(const std::string& file, Game* game)
     : m_FileName(file)
-    , m_ShaderManager(shaderManager)
+    , m_Game(game)
 {
 
 }
@@ -16,7 +17,7 @@ void Map::init()
 {
     parseFile();
 
-    m_ShaderManager.useShader("Simple");
+    m_Game->getShaderManager().useShader("Simple");
 
     setupVertices();
     setupVertexBuffer();
@@ -37,7 +38,7 @@ void Map::display()
 
 void Map::setOffset()
 {
-    auto offsetLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_Offset");
+    auto offsetLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_Offset");
     glUniform2f(offsetLocation, 0.f, 0.f);
 }
 
@@ -91,7 +92,7 @@ void Map::setupVertexBuffer()
 void Map::setupVertexAttrib()
 {
     glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
-    auto posAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Position");
+    auto posAttrib = m_Game->getShaderManager().getShader("Simple")->getAttribLocation("in_Position");
     glEnableVertexAttribArray(posAttrib);
     glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
 }
@@ -130,7 +131,7 @@ void Map::setupColorBuffer()
 void Map::setupColorAttrib()
 {
     glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
-    auto colorAttrib = m_ShaderManager.getShader("Simple")->getAttribLocation("in_Color");
+    auto colorAttrib = m_Game->getShaderManager().getShader("Simple")->getAttribLocation("in_Color");
     glEnableVertexAttribArray(colorAttrib);
     glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
 }

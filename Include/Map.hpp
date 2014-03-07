@@ -16,10 +16,11 @@ enum Tile
     BlueTile,
 };
 
+class Game;
 class Map
 {
 public:
-    Map(const std::string& file, ShaderManager& shaderManager);
+    Map(const std::string& file, Game* game);
 
     int getWidth() const;
     int getHeight() const;
@@ -61,13 +62,11 @@ private:
     std::vector<float> m_Vertices;
     std::vector<float> m_Colors;
 
-    // If (0,0) is the bottom left of a tile:
-    // -> the tile at (x,y) is m_Tiles[(m_Height - y) * m_Width + x]
     std::vector<int> m_Tiles;
 
     std::string m_FileName;
 
-    ShaderManager& m_ShaderManager;
+    Game* m_Game;
 };
 
 #endif // MAP_HPP

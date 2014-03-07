@@ -11,7 +11,7 @@
 Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
-    , m_TestMap("Maps/testMap.txt", m_ShaderManager)
+    , m_TestMap("Maps/testMap.txt", this)
     , m_TestEntity(this, glm::vec2(m_Width / 2.f, m_Height / 2.f), glm::vec2(32.f))
 {
 
