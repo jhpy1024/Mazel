@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -207,6 +208,20 @@ void Map::parseTiles(const std::string& line)
             commaPos = nextCommaPos;
         }
     }
+}
+
+int Map::getTileTypeAtPixels(glm::vec2 position) const
+{
+    glm::vec2 tilePosition = position / glm::vec2(m_TileWidth, m_TileHeight);
+
+    return getTileTypeAtTile(tilePosition);
+}
+
+int Map::getTileTypeAtTile(glm::vec2 position) const
+{
+    int index = static_cast<float>((m_Height - position.y) * m_Width + position.x);
+
+    return m_Tiles.at(index);
 }
 
 int Map::getWidth() const

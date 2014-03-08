@@ -29,6 +29,9 @@ public:
     int getTileWidth() const;
     int getTileHeight() const;
 
+    int getTileTypeAtPixels(glm::vec2 position) const;
+    int getTileTypeAtTile(glm::vec2 position) const;
+
     void init();
     void display();
 

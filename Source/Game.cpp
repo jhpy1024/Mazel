@@ -12,7 +12,7 @@ Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
     , m_TestMap("Maps/testMap.txt", this)
-    , m_TestEntity(this, glm::vec2(32.f / 2.f), glm::vec2(32.f))
+    , m_TestEntity(this, glm::vec2(32.f * 1.5f), glm::vec2(32.f))
 {
 
 }
@@ -24,6 +24,8 @@ void Game::init()
 
     m_TestMap.init();
     m_TestEntity.init();
+
+    std::cout << "Tile type at (1, 1) = " << m_TestMap.getTileTypeAtTile(glm::vec2(1.f)) << std::endl;
 }
 
 void Game::loadShaders()
