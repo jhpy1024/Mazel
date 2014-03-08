@@ -109,17 +109,17 @@ void Map::setupColors()
     {
         switch (t)
         {
-        case RedTile:
+        case DarkTile:
             m_Colors.insert(m_Colors.end(),
-                {1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f});
+                {0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f});
             break;
-        case GreenTile:
+        case GrayTile:
             m_Colors.insert(m_Colors.end(),
-                {0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f, 0.f, 1.f});
+                {0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f});
             break;
-        case BlueTile:
+        case WhiteTile:
             m_Colors.insert(m_Colors.end(),
-                {0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f, 0.f, 0.f, 1.f, 1.f});
+                {1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f});
             break;
         default:
             break;

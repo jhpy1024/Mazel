@@ -13,9 +13,9 @@
 
 enum Tile
 {
-    RedTile,
-    GreenTile,
-    BlueTile,
+    DarkTile,
+    GrayTile,
+    WhiteTile,
 };
 
 class Game;
