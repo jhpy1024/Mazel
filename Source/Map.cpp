@@ -219,7 +219,7 @@ int Map::getTileTypeAtPixels(glm::vec2 position) const
 
 int Map::getTileTypeAtTile(glm::vec2 position) const
 {
-    int index = static_cast<float>((m_Height - position.y) * m_Width + position.x);
+    int index = static_cast<float>(((m_Height - 1) - position.y) * m_Width + position.x);
 
     return m_Tiles.at(index);
 }

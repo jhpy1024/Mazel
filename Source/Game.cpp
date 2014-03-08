@@ -24,8 +24,6 @@ void Game::init()
 
     m_TestMap.init();
     m_TestEntity.init();
-
-    std::cout << "Tile type at (1, 1) = " << m_TestMap.getTileTypeAtTile(glm::vec2(1.f)) << std::endl;
 }
 
 void Game::loadShaders()
