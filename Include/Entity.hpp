@@ -43,7 +43,8 @@ public:
     std::string getID() const;
 
 protected:
-    virtual void setModelMatrix();
+    void updateMatrices();
+    void passMatrixToShader();
 
 protected:
     Game* m_Game;
@@ -56,6 +57,12 @@ protected:
 
     glm::vec2 m_Position;
     glm::vec2 m_Size;
+    glm::vec2 m_Scale;
+    float m_Rotation;
+
+    glm::mat4 m_TranslationMatrix;
+    glm::mat4 m_RotationMatrix;
+    glm::mat4 m_ScaleMatrix;
     glm::mat4 m_ModelMatrix;
 
     std::string m_ID;

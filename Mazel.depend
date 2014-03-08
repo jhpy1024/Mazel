@@ -542,26 +542,30 @@
 1394036350 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\utils.inl
 	<sstream>
 
-1394221585 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
+1394303454 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<vector>
 	<string>
 	<glm/glm.hpp>
 
-1394221498 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
+1394304547 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
 	"Entity.hpp"
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394224939 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394304909 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
+	<glm/gtx/constants.hpp>
 
-1394301011 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
+1394302837 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
 	"Entity.hpp"
+
+1390011608 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\constants.hpp
+	"../gtc/constants.hpp"
 
