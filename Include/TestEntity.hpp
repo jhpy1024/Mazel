@@ -25,6 +25,11 @@ public:
 
 private:
     void move(int delta);
+    bool moveDelayOver() const;
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
 
     void setModelMatrix() override;
 

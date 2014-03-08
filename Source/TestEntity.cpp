@@ -113,28 +113,50 @@ void TestEntity::specialKeyReleased(int key)
 
 void TestEntity::move(int delta)
 {
-    if (glutGet(GLUT_ELAPSED_TIME) - m_LastTimeMoved >= m_MoveDelay)
+    if (moveDelayOver())
     {
         if (m_MovingUp)
-            m_Position.y += m_Size.y;
+            moveUp();
         else if (m_MovingDown)
-            m_Position.y -= m_Size.y;
+            moveDown();
         else if (m_MovingLeft)
-            m_Position.x -= m_Size.x;
+            moveLeft();
         else if (m_MovingRight)
-            m_Position.x += m_Size.x;
+            moveRight();
 
         m_LastTimeMoved = glutGet(GLUT_ELAPSED_TIME);
     }
 }
 
+bool TestEntity::moveDelayOver() const
+{
+    auto currentTime = glutGet(GLUT_ELAPSED_TIME);
+    return currentTime - m_LastTimeMoved >= m_MoveDelay;
+}
+
+void TestEntity::moveUp()
+{
+    m_Position.y += m_Size.y;
+}
+
+void TestEntity::moveDown()
+{
+    m_Position.y -= m_Size.y;
+}
+
+void TestEntity::moveLeft()
+{
+    m_Position.x -= m_Size.x;
+}
+
+void TestEntity::moveRight()
+{
+    m_Position.x += m_Size.x;
+}
+
 void TestEntity::update(int delta)
 {
     move(delta);
-
-    m_Rotation += 0.1f;
-    if (m_Rotation >= 6.28f)
-        m_Rotation = 0.f;
 }
 
 void TestEntity::display()
