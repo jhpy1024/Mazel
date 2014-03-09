@@ -7,6 +7,8 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/constants.hpp>
 
+#include <iostream>
+
 TestEntity::TestEntity(Game* game, glm::vec2 position, glm::vec2 size)
     : Entity(game, position, size, "TestEntity")
     , m_MovingUp(false)
@@ -136,26 +138,39 @@ bool TestEntity::moveDelayOver() const
 
 void TestEntity::moveUp()
 {
+    if (m_Game->getMap().getTileTypeAtPixels(glm::vec2(getBottomLeft().x, getBottomLeft().y + m_Size.y)) == 0)
+        return;
     m_Position.y += m_Size.y;
     m_Rotation = 0.f;
 }
 
 void TestEntity::moveDown()
 {
+    if (m_Game->getMap().getTileTypeAtPixels(glm::vec2(getBottomLeft().x, getBottomLeft().y - m_Size.y)) == 0)
+        return;
     m_Position.y -= m_Size.y;
     m_Rotation = 180.f;
 }
 
 void TestEntity::moveLeft()
 {
+    if (m_Game->getMap().getTileTypeAtPixels(glm::vec2(getBottomLeft().x - m_Size.x, getBottomLeft().y)) == 0)
+        return;
     m_Position.x -= m_Size.x;
     m_Rotation = 90.f;
 }
 
 void TestEntity::moveRight()
 {
+    if (m_Game->getMap().getTileTypeAtPixels(glm::vec2(getBottomLeft().x + m_Size.x, getBottomLeft().y)) == 0)
+        return;
     m_Position.x += m_Size.x;
     m_Rotation = 270.f;
+}
+
+glm::vec2 TestEntity::getBottomLeft() const
+{
+    return m_Position - (m_Size / 2.f);
 }
 
 void TestEntity::update(int delta)

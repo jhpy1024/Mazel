@@ -49,7 +49,7 @@
 	"TestEntity.hpp"
 	<vector>
 
-1394311356 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394376991 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
@@ -556,15 +556,16 @@
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394304909 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394377540 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtx/constants.hpp>
+	<iostream>
 
-1394302837 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
+1394377331 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
 	"Entity.hpp"
 
 1390011608 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\constants.hpp

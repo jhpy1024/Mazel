@@ -31,6 +31,8 @@ private:
     void moveLeft();
     void moveRight();
 
+    glm::vec2 getBottomLeft() const;
+
 private:
     bool m_MovingUp;
     bool m_MovingDown;
