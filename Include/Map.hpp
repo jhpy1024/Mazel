@@ -34,6 +34,9 @@ public:
     Tile getTileAtPixelPos(glm::vec2 position) const;
     Tile getTileAtTilePos(glm::vec2 position) const;
 
+    bool isTileAtPixelPosCollidable(glm::vec2 position) const;
+    bool isTileAtTilePosCollidable(glm::vec2 position) const;
+
     void init();
     void display();
 

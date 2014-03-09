@@ -216,6 +216,16 @@ void Map::parseTiles(const std::string& line)
     }
 }
 
+bool Map::isTileAtPixelPosCollidable(glm::vec2 position) const
+{
+    return getTileAtPixelPos(position).isCollidable;
+}
+
+bool Map::isTileAtTilePosCollidable(glm::vec2 position) const
+{
+    return getTileAtTilePos(position).isCollidable;
+}
+
 Tile Map::getTileAtPixelPos(glm::vec2 position) const
 {
     glm::vec2 tilePosition = position / glm::vec2(m_TileWidth, m_TileHeight);
