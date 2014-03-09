@@ -518,7 +518,7 @@
 	<cstdarg>
 	<cstdio>
 
-1394391200 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
+1394394571 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
 	<string>
 	<vector>
 	<map>
@@ -527,6 +527,7 @@
 	<glm/glm.hpp>
 	"ShaderManager.hpp"
 	"Tile.hpp"
+	"Buffer.hpp"
 
 1394391258 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
 	"Map.hpp"
@@ -559,7 +560,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394393901 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394394194 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>

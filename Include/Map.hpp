@@ -12,6 +12,7 @@
 
 #include "ShaderManager.hpp"
 #include "Tile.hpp"
+#include "Buffer.hpp"
 
 enum TileType
 {
@@ -63,8 +64,8 @@ private:
     void addTileTypesToMap();
 
 private:
-    GLuint m_VertexBuffer;
-    GLuint m_ColorBuffer;
+    Buffer m_VertexBuffer;
+    Buffer m_ColorBuffer;
 
     int m_Width;
     int m_Height;

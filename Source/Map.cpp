@@ -110,14 +110,13 @@ void Map::createBottomLeftVertex(int x, int y)
 
 void Map::setupVertexBuffer()
 {
-    glGenBuffers(1, &m_VertexBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Vertices.size(), &m_Vertices[0], GL_STATIC_DRAW);
+    m_VertexBuffer.init();
+    m_VertexBuffer.setData(m_Vertices);
 }
 
 void Map::setupVertexAttrib()
 {
-    glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
+    m_VertexBuffer.bind();
     auto posAttrib = m_Game->getShaderManager().getShader("Simple")->getAttribLocation("in_Position");
     glEnableVertexAttribArray(posAttrib);
     glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
@@ -134,14 +133,13 @@ void Map::setupColors()
 
 void Map::setupColorBuffer()
 {
-    glGenBuffers(1, &m_ColorBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Colors.size(), &m_Colors[0], GL_STATIC_DRAW);
+    m_ColorBuffer.init();
+    m_ColorBuffer.setData(m_Colors);
 }
 
 void Map::setupColorAttrib()
 {
-    glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
+    m_ColorBuffer.bind();
     auto colorAttrib = m_Game->getShaderManager().getShader("Simple")->getAttribLocation("in_Color");
     glEnableVertexAttribArray(colorAttrib);
     glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
