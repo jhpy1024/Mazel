@@ -20,6 +20,8 @@ Map::Map(const std::string& file, Game* game)
 
 void Map::init()
 {
+    addTileTypesToMap();
+
     parseFile();
 
     m_Game->getShaderManager().useShader("Simple");
@@ -31,6 +33,23 @@ void Map::init()
     setupColors();
     setupColorBuffer();
     setupColorAttrib();
+}
+
+void Map::addTileTypesToMap()
+{
+    Tile tile;
+
+    tile.color = glm::vec4(0.1f, 0.1f, 0.1f, 1.f);
+    tile.isCollidable = true;
+    m_TileTypes[DarkTile] = tile;
+
+    tile.color = glm::vec4(0.3f, 0.3f, 0.3f, 1.f);
+    tile.isCollidable = false;
+    m_TileTypes[GrayTile] = tile;
+
+    tile.color = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    tile.isCollidable = false;
+    m_TileTypes[WhiteTile] = tile;
 }
 
 void Map::display()
@@ -108,23 +127,8 @@ void Map::setupColors()
 {
     for (auto t : m_Tiles)
     {
-        switch (t)
-        {
-        case DarkTile:
-            m_Colors.insert(m_Colors.end(),
-                {0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f, 0.1f, 0.1f, 0.1f, 1.f});
-            break;
-        case GrayTile:
-            m_Colors.insert(m_Colors.end(),
-                {0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f, 0.3f, 0.3f, 0.3f, 1.f});
-            break;
-        case WhiteTile:
-            m_Colors.insert(m_Colors.end(),
-                {1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 1.f});
-            break;
-        default:
-            break;
-        }
+        for (int i = 0; i < 6; ++i)
+            m_Colors.insert(m_Colors.end(), {t.color.x, t.color.y, t.color.z, t.color.w});
     }
 }
 
@@ -191,7 +195,8 @@ void Map::parseTiles(const std::string& line)
     {
         auto commaPos = line.find_first_of(',');
         auto firstTileStr = line.substr(0, commaPos);
-        m_Tiles.push_back(util::stringToNum<int>(firstTileStr));
+        auto firstTileNum = util::stringToNum<int>(firstTileStr);
+        m_Tiles.push_back(m_TileTypes[firstTileNum]);
 
         while (commaPos != line.npos)
         {
@@ -203,21 +208,22 @@ void Map::parseTiles(const std::string& line)
             else
                 tileStr = line.substr(commaPos + 1, nextCommaPos - 1);
 
-            m_Tiles.push_back(util::stringToNum<int>(tileStr));
+            auto tileNum = util::stringToNum<int>(tileStr);
+            m_Tiles.push_back(m_TileTypes[tileNum]);
 
             commaPos = nextCommaPos;
         }
     }
 }
 
-int Map::getTileTypeAtPixels(glm::vec2 position) const
+Tile Map::getTileAtPixelPos(glm::vec2 position) const
 {
     glm::vec2 tilePosition = position / glm::vec2(m_TileWidth, m_TileHeight);
 
-    return getTileTypeAtTile(tilePosition);
+    return getTileAtTilePos(tilePosition);
 }
 
-int Map::getTileTypeAtTile(glm::vec2 position) const
+Tile Map::getTileAtTilePos(glm::vec2 position) const
 {
     int index = static_cast<float>(((m_Height - 1) - position.y) * m_Width + position.x);
 

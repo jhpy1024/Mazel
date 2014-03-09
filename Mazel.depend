@@ -518,15 +518,17 @@
 	<cstdarg>
 	<cstdio>
 
-1394307445 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
+1394380382 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
 	<string>
 	<vector>
+	<map>
 	<GL/glew.h>
 	<GL/gl.h>
 	<glm/glm.hpp>
 	"ShaderManager.hpp"
+	"Tile.hpp"
 
-1394311361 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
+1394380417 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
 	"Map.hpp"
 	<fstream>
 	<iostream>
@@ -556,7 +558,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394377540 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394380484 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
@@ -570,4 +572,7 @@
 
 1390011608 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\constants.hpp
 	"../gtc/constants.hpp"
+
+1394378912 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\tile.hpp
+	<glm/glm.hpp>
 

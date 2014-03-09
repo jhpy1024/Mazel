@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 #include <GL/glew.h>
 #include <GL/gl.h>
@@ -10,8 +11,9 @@
 #include <glm/glm.hpp>
 
 #include "ShaderManager.hpp"
+#include "Tile.hpp"
 
-enum Tile
+enum TileType
 {
     DarkTile,
     GrayTile,
@@ -29,8 +31,8 @@ public:
     int getTileWidth() const;
     int getTileHeight() const;
 
-    int getTileTypeAtPixels(glm::vec2 position) const;
-    int getTileTypeAtTile(glm::vec2 position) const;
+    Tile getTileAtPixelPos(glm::vec2 position) const;
+    Tile getTileAtTilePos(glm::vec2 position) const;
 
     void init();
     void display();
@@ -55,6 +57,8 @@ private:
 
     void setModelMatrix();
 
+    void addTileTypesToMap();
+
 private:
     GLuint m_VertexBuffer;
     GLuint m_ColorBuffer;
@@ -67,13 +71,15 @@ private:
     std::vector<float> m_Vertices;
     std::vector<float> m_Colors;
 
-    std::vector<int> m_Tiles;
+    std::vector<Tile> m_Tiles;
 
     std::string m_FileName;
 
     Game* m_Game;
 
     glm::mat4 m_ModelMatrix;
+
+    std::map<int, Tile> m_TileTypes;
 };
 
 #endif // MAP_HPP
