@@ -146,7 +146,7 @@ void TestEntity::moveDown()
     if (!tileBelow.isCollidable)
     {
         m_Position.y -= m_Size.y;
-        m_Rotation = 0.f;
+        m_Rotation = 180.f;
     }
 }
 
