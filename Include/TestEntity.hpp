@@ -8,9 +8,6 @@ class TestEntity : public Entity
 public:
     TestEntity(Game* game, glm::vec2 position, glm::vec2 size);
 
-    void setupVertices() override;
-    void setupColors() override;
-
     void setupVertexBuffer() override;
     void setupColorBuffer() override;
 

@@ -18,17 +18,14 @@ Entity::Entity(Game* game, glm::vec2 position, glm::vec2 size, const std::string
 
 Entity::~Entity()
 {
-    glDeleteBuffers(1, &m_VertexBuffer);
-    glDeleteBuffers(1, &m_ColorBuffer);
+
 }
 
 void Entity::init()
 {
-    setupVertices();
     setupVertexBuffer();
     setupVertexAttrib();
 
-    setupColors();
     setupColorBuffer();
     setupColorAttrib();
 }

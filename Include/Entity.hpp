@@ -9,6 +9,8 @@
 
 #include <glm/glm.hpp>
 
+#include "Buffer.hpp"
+
 class Game;
 class Entity
 {
@@ -17,9 +19,6 @@ public:
     virtual ~Entity();
 
     void init();
-
-    virtual void setupVertices() = 0;
-    virtual void setupColors() = 0;
 
     virtual void setupVertexBuffer() = 0;
     virtual void setupColorBuffer() = 0;
@@ -49,11 +48,8 @@ protected:
 protected:
     Game* m_Game;
 
-    GLuint m_VertexBuffer;
-    GLuint m_ColorBuffer;
-
-    std::vector<float> m_Vertices;
-    std::vector<float> m_Colors;
+    Buffer m_VertexBuffer;
+    Buffer m_ColorBuffer;
 
     glm::vec2 m_Position;
     glm::vec2 m_Size;

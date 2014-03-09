@@ -21,51 +21,41 @@ TestEntity::TestEntity(Game* game, glm::vec2 position, glm::vec2 size)
 
 }
 
-void TestEntity::setupVertices()
-{
-    m_Vertices =
-    {
-        -m_Size.x / 2.f, -m_Size.y / 2.f,
-        m_Size.x / 2.f, -m_Size.y / 2.f,
-        0.f, m_Size.y / 2.f
-    };
-}
-
 void TestEntity::setupVertexBuffer()
 {
-    glGenBuffers(1, &m_VertexBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Vertices.size(), &m_Vertices[0], GL_STATIC_DRAW);
+    m_VertexBuffer.init();
+    m_VertexBuffer.bind();
+    m_VertexBuffer.setData(
+        {
+            -m_Size.x / 2.f, -m_Size.y / 2.f,
+            m_Size.x / 2.f, -m_Size.y / 2.f,
+            0.f, m_Size.y / 2.f
+        });
 }
 
 void TestEntity::setupVertexAttrib()
 {
-    glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffer);
+    m_VertexBuffer.bind();
     auto posAttrib = m_Game->getShaderManager().getShader("Simple")->getAttribLocation("in_Position");
     glEnableVertexAttribArray(posAttrib);
     glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
 }
 
-void TestEntity::setupColors()
-{
-    m_Colors =
-    {
-        1.f, 0.f, 0.f, 1.f,
-        0.f, 1.f, 0.f, 1.f,
-        0.f, 0.f, 1.f, 1.f
-    };
-}
-
 void TestEntity::setupColorBuffer()
 {
-    glGenBuffers(1, &m_ColorBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * m_Colors.size(), &m_Colors[0], GL_STATIC_DRAW);
+    m_ColorBuffer.init();
+    m_ColorBuffer.bind();
+    m_ColorBuffer.setData(
+        {
+            1.f, 0.f, 0.f, 1.f,
+            0.f, 1.f, 0.f, 1.f,
+            0.f, 0.f, 1.f, 1.f
+        });
 }
 
 void TestEntity::setupColorAttrib()
 {
-    glBindBuffer(GL_ARRAY_BUFFER, m_ColorBuffer);
+    m_ColorBuffer.bind();
     auto colorAttrib = m_Game->getShaderManager().getShader("Simple")->getAttribLocation("in_Color");
     glEnableVertexAttribArray(colorAttrib);
     glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
@@ -199,5 +189,5 @@ void TestEntity::display()
     updateMatrices();
     setupVertexAttrib();
     setupColorAttrib();
-    glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
+    glDrawArrays(GL_TRIANGLES, 0, m_VertexBuffer.getDataSize());
 }
