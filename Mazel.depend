@@ -40,16 +40,17 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394219368 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394397567 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
 	"ShaderManager.hpp"
 	"Map.hpp"
 	"TestEntity.hpp"
+	"Projectile.hpp"
 	<vector>
 
-1394389399 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394397972 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
@@ -585,4 +586,13 @@
 
 1394393995 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\buffer.cpp
 	"Buffer.hpp"
+
+1394397408 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\projectile.hpp
+	<glm/glm.hpp>
+	"Entity.hpp"
+
+1394398510 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\projectile.cpp
+	"Projectile.hpp"
+	<GL/freeglut.h>
+	"Game.hpp"
 

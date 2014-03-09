@@ -19,11 +19,15 @@ public:
     void update(int delta) override;
     void display() override;
 
+    bool isAlive() const;
+
 private:
     int m_TimeCreated;
     const int m_Lifetime;
+    bool m_IsAlive;
 
     glm::vec2 m_Velocity;
+    const float m_Speed;
 };
 
 #endif // PROJECTILE_HPP
