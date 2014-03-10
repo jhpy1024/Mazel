@@ -52,9 +52,9 @@ void TestEntity::setupColorBuffer()
     m_ColorBuffer.bind();
     m_ColorBuffer.setData(
         {
-            1.f, 0.f, 0.f, 1.f,
             0.f, 1.f, 0.f, 1.f,
-            0.f, 0.f, 1.f, 1.f
+            0.f, 1.f, 0.f, 1.f,
+            0.f, 1.f, 0.f, 1.f
         });
 }
 
