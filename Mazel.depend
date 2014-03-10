@@ -40,16 +40,19 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394471210 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394472960 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
 	"ShaderManager.hpp"
 	"Map.hpp"
+	"Entity.hpp"
 	"TestEntity.hpp"
+	"Projectile.hpp"
 	<vector>
+	<memory>
 
-1394398522 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394473089 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>

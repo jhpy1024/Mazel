@@ -12,7 +12,6 @@ Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
     , m_TestMap("Maps/testMap.txt", this)
-    , m_TestEntity(this, glm::vec2(32.f * 1.5f), glm::vec2(32.f))
 {
 
 }
@@ -23,7 +22,26 @@ void Game::init()
     setupMatrices();
 
     m_TestMap.init();
-    m_TestEntity.init();
+
+    createTestEntity(glm::vec2(32.f * 1.5f), glm::vec2(32.f));
+}
+
+void Game::createTestEntity(glm::vec2 position, glm::vec2 size)
+{
+    auto testEntity = std::make_shared<TestEntity>(this, position, size);
+
+    testEntity->init();
+    m_Entities.push_back(testEntity);
+    m_TestEntity = testEntity;
+}
+
+void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
+{
+    auto projectile = std::make_shared<Projectile>(this, position, size, angle);
+
+    projectile->init();
+    m_Entities.push_back(projectile);
+    m_Projectiles.push_back(projectile);
 }
 
 void Game::loadShaders()
@@ -51,7 +69,10 @@ void Game::setupMatrices()
 
 void Game::keyEvent(unsigned char key, int x, int y)
 {
-    m_TestEntity.keyEvent(key);
+    for (auto entity : m_Entities)
+    {
+        entity->keyEvent(key);
+    }
 }
 
 void Game::mouseEvent(int button, int state, int x, int y)
@@ -61,23 +82,36 @@ void Game::mouseEvent(int button, int state, int x, int y)
 
 void Game::specialKeyPressed(int key, int x, int y)
 {
-    m_TestEntity.specialKeyPressed(key);
+    for (auto entity : m_Entities)
+    {
+        entity->specialKeyPressed(key);
+    }
 }
 
 void Game::specialKeyReleased(int key, int x, int y)
 {
-    m_TestEntity.specialKeyReleased(key);
+    for (auto entity : m_Entities)
+    {
+        entity->specialKeyReleased(key);
+    }
 }
 
 void Game::update(int delta)
 {
-    m_TestEntity.update(delta);
+    for (auto entity : m_Entities)
+    {
+        entity->update(delta);
+    }
 }
 
 void Game::display()
 {
     m_TestMap.display();
-    m_TestEntity.display();
+
+    for (auto entity : m_Entities)
+    {
+        entity->display();
+    }
 }
 
 void Game::resize(int width, int height)

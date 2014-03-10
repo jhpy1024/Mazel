@@ -9,9 +9,12 @@
 
 #include "ShaderManager.hpp"
 #include "Map.hpp"
+#include "Entity.hpp"
 #include "TestEntity.hpp"
+#include "Projectile.hpp"
 
 #include <vector>
+#include <memory>
 
 class Game
 {
@@ -36,6 +39,9 @@ public:
     glm::mat4 getProjectionMatrix() const;
     glm::mat4 getViewMatrix() const;
 
+    void createTestEntity(glm::vec2 position, glm::vec2 size);
+    void createProjectile(glm::vec2 position, glm::vec2 size, float angle);
+
 private:
     void loadShaders();
     void setupMatrices();
@@ -53,7 +59,10 @@ private:
 
     Map m_TestMap;
 
-    TestEntity m_TestEntity;
+    std::shared_ptr<TestEntity> m_TestEntity;
+
+    std::vector<std::shared_ptr<Entity>> m_Entities;
+    std::vector<std::shared_ptr<Projectile>> m_Projectiles;
 };
 
 #endif // GAME_HPP
