@@ -46,6 +46,9 @@ private:
     void loadShaders();
     void setupMatrices();
 
+    void updateEntities(int delta);
+    void addNewEntities();
+
 private:
     int m_Width;
     int m_Height;
@@ -62,6 +65,7 @@ private:
     std::shared_ptr<TestEntity> m_TestEntity;
 
     std::vector<std::shared_ptr<Entity>> m_Entities;
+    std::vector<std::shared_ptr<Entity>> m_EntitiesToAdd;
     std::vector<std::shared_ptr<Projectile>> m_Projectiles;
 };
 

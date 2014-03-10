@@ -31,7 +31,7 @@ void Game::createTestEntity(glm::vec2 position, glm::vec2 size)
     auto testEntity = std::make_shared<TestEntity>(this, position, size);
 
     testEntity->init();
-    m_Entities.push_back(testEntity);
+    m_EntitiesToAdd.push_back(testEntity);
     m_TestEntity = testEntity;
 }
 
@@ -40,7 +40,7 @@ void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
     auto projectile = std::make_shared<Projectile>(this, position, size, angle);
 
     projectile->init();
-    m_Entities.push_back(projectile);
+    m_EntitiesToAdd.push_back(projectile);
     m_Projectiles.push_back(projectile);
 }
 
@@ -98,10 +98,26 @@ void Game::specialKeyReleased(int key, int x, int y)
 
 void Game::update(int delta)
 {
+    updateEntities(delta);
+    addNewEntities();
+}
+
+void Game::updateEntities(int delta)
+{
     for (auto entity : m_Entities)
     {
         entity->update(delta);
     }
+}
+
+void Game::addNewEntities()
+{
+    for (auto newEntity : m_EntitiesToAdd)
+    {
+        m_Entities.push_back(newEntity);
+    }
+
+    m_EntitiesToAdd.clear();
 }
 
 void Game::display()

@@ -14,6 +14,7 @@ public:
     void setupVertexAttrib() override;
     void setupColorAttrib() override;
 
+    void keyEvent(unsigned char key) override;
     void specialKeyPressed(int key) override;
     void specialKeyReleased(int key) override;
 
@@ -28,6 +29,10 @@ private:
     void moveLeft();
     void moveRight();
 
+    void shootIfPossible();
+    bool shootDelayOver() const;
+    void shootProjectile();
+
     glm::vec2 getBottomLeft() const;
 
 private:
@@ -38,6 +43,11 @@ private:
 
     int m_LastTimeMoved;
     const float m_MoveDelay;
+
+    int m_LastTimeFired;
+    const float m_FireDelay;
+
+    float m_ProjectileRotationOffset;
 };
 
 #endif // TEST_ENTITY_HPP

@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394472960 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394473834 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -52,7 +52,7 @@
 	<vector>
 	<memory>
 
-1394473089 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394473897 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
@@ -563,7 +563,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394394194 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394474052 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
@@ -572,7 +572,7 @@
 	<glm/gtx/constants.hpp>
 	<iostream>
 
-1394393527 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
+1394474269 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
 	"Entity.hpp"
 
 1390011608 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\constants.hpp
@@ -593,7 +593,7 @@
 	<glm/glm.hpp>
 	"Entity.hpp"
 
-1394398510 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\projectile.cpp
+1394474092 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\projectile.cpp
 	"Projectile.hpp"
 	<GL/freeglut.h>
 	"Game.hpp"

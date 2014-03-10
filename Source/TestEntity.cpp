@@ -17,6 +17,9 @@ TestEntity::TestEntity(Game* game, glm::vec2 position, glm::vec2 size)
     , m_MovingRight(false)
     , m_LastTimeMoved(0)
     , m_MoveDelay(50.f)
+    , m_LastTimeFired(0)
+    , m_FireDelay(200.f)
+    , m_ProjectileRotationOffset(20.f)
 {
 
 }
@@ -59,6 +62,45 @@ void TestEntity::setupColorAttrib()
     auto colorAttrib = m_Game->getShaderManager().getShader("Simple")->getAttribLocation("in_Color");
     glEnableVertexAttribArray(colorAttrib);
     glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
+}
+
+void TestEntity::keyEvent(unsigned char key)
+{
+    switch (key)
+    {
+    case ' ':
+        shootIfPossible();
+        break;
+    default:
+        break;
+    }
+}
+
+void TestEntity::shootIfPossible()
+{
+    if (shootDelayOver())
+    {
+        shootProjectile();
+    }
+}
+
+bool TestEntity::shootDelayOver() const
+{
+    auto currentTime = glutGet(GLUT_ELAPSED_TIME);
+    return currentTime - m_LastTimeFired >= m_FireDelay;
+}
+
+void TestEntity::shootProjectile()
+{
+    auto forwardProjectileRotation = glm::radians<float>(-m_Rotation);
+    auto leftProjectileRotation = glm::radians<float>(-m_Rotation - m_ProjectileRotationOffset);
+    auto rightProjectileRotation = glm::radians<float>(-m_Rotation + m_ProjectileRotationOffset);
+
+    m_Game->createProjectile(m_Position, glm::vec2(15.f), forwardProjectileRotation);
+    m_Game->createProjectile(m_Position, glm::vec2(15.f), leftProjectileRotation);
+    m_Game->createProjectile(m_Position, glm::vec2(15.f), rightProjectileRotation);
+
+    m_LastTimeFired = glutGet(GLUT_ELAPSED_TIME);
 }
 
 void TestEntity::specialKeyPressed(int key)

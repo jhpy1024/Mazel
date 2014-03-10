@@ -8,7 +8,7 @@ Projectile::Projectile(Game* game, glm::vec2 position, glm::vec2 size, float ang
     : Entity(game, position, size, "Projectile")
     , m_TimeCreated(glutGet(GLUT_ELAPSED_TIME))
     , m_Lifetime(5000)
-    , m_Speed(0.1f)
+    , m_Speed(0.8f)
 {
     m_Velocity = glm::vec2(m_Speed * std::sin(angle), m_Speed * std::cos(angle));
     m_Rotation = -((angle * 180.f) / 3.14f);
