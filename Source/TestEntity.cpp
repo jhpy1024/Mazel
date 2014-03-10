@@ -92,9 +92,9 @@ void TestEntity::keyReleased(unsigned char key)
 
 void TestEntity::fireIfPossible()
 {
-    if (shootDelayOver())
+    if (fireDelayOver())
     {
-        shootProjectile();
+        fireProjectile();
     }
 }
 
