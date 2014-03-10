@@ -25,6 +25,12 @@ public:
     void display() override;
 
 private:
+    void updateEntities(int delta);
+
+    void displayMap();
+    void displayEntities();
+
+private:
     std::shared_ptr<TestEntity>& m_TestEntity;
     std::vector<std::shared_ptr<Entity>>& m_Entities;
     std::vector<std::shared_ptr<Projectile>>& m_Projectiles;

@@ -48,6 +48,11 @@ void PlayState::specialKeyReleased(int key, int x, int y)
 
 void PlayState::update(int delta)
 {
+    updateEntities(delta);
+}
+
+void PlayState::updateEntities(int delta)
+{
     for (auto entity : m_Entities)
     {
         entity->update(delta);
@@ -56,11 +61,19 @@ void PlayState::update(int delta)
 
 void PlayState::display()
 {
-    m_TestMap.display();
+    displayMap();
+    displayEntities();
+}
 
+void PlayState::displayMap()
+{
+    m_TestMap.display();
+}
+
+void PlayState::displayEntities()
+{
     for (auto entity : m_Entities)
     {
         entity->display();
     }
-
 }
