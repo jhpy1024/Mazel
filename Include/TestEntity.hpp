@@ -47,6 +47,7 @@ private:
 
     int m_LastTimeFired;
     const float m_FireDelay;
+    bool m_Firing;
 
     const float m_ProjectileRotationOffset;
     const glm::vec2 m_ProjectileSize;

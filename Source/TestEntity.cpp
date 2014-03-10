@@ -21,6 +21,7 @@ TestEntity::TestEntity(Game* game, glm::vec2 position, glm::vec2 size)
     , m_FireDelay(200.f)
     , m_ProjectileRotationOffset(20.f)
     , m_ProjectileSize(15.f)
+    , m_Firing(false)
 {
 
 }
@@ -70,7 +71,7 @@ void TestEntity::keyPressed(unsigned char key)
     switch (key)
     {
     case ' ':
-        shootIfPossible();
+        m_Firing = true;
         break;
     default:
         break;
@@ -82,6 +83,7 @@ void TestEntity::keyReleased(unsigned char key)
     switch (key)
     {
     case ' ':
+        m_Firing = false;
         break;
     default:
         break;
@@ -236,6 +238,9 @@ glm::vec2 TestEntity::getBottomLeft() const
 void TestEntity::update(int delta)
 {
     move(delta);
+
+    if (m_Firing)
+        shootIfPossible();
 }
 
 void TestEntity::display()
