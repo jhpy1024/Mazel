@@ -12,6 +12,7 @@
 #include "Entity.hpp"
 #include "TestEntity.hpp"
 #include "Projectile.hpp"
+#include "GameState.hpp"
 
 #include <vector>
 #include <memory>
@@ -34,7 +35,7 @@ public:
 
     void resize(int width, int height);
 
-    const Map& getMap() const;
+    Map& getMap();
     ShaderManager& getShaderManager();
 
     glm::mat4 getProjectionMatrix() const;
@@ -43,11 +44,14 @@ public:
     void createTestEntity(glm::vec2 position, glm::vec2 size);
     void createProjectile(glm::vec2 position, glm::vec2 size, float angle);
 
+    std::shared_ptr<TestEntity>& getPlayer();
+    std::vector<std::shared_ptr<Entity>>& getEntities();
+    std::vector<std::shared_ptr<Projectile>>& getProjectiles();
+
 private:
     void loadShaders();
     void setupMatrices();
 
-    void updateEntities(int delta);
     void addNewEntities();
 
 private:
@@ -68,6 +72,8 @@ private:
     std::vector<std::shared_ptr<Entity>> m_Entities;
     std::vector<std::shared_ptr<Entity>> m_EntitiesToAdd;
     std::vector<std::shared_ptr<Projectile>> m_Projectiles;
+
+    std::shared_ptr<GameState> m_CurrentState;
 };
 
 #endif // GAME_HPP

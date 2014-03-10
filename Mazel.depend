@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394474631 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394482531 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -49,16 +49,18 @@
 	"Entity.hpp"
 	"TestEntity.hpp"
 	"Projectile.hpp"
+	"GameState.hpp"
 	<vector>
 	<memory>
 
-1394474707 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394482701 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
 	"Shader.hpp"
+	"PlayState.hpp"
 
 1393966071 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
 	"ShaderManager.hpp"
@@ -597,4 +599,23 @@
 	"Projectile.hpp"
 	<GL/freeglut.h>
 	"Game.hpp"
+
+1394479802 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\gamestate.cpp
+	"GameState.hpp"
+
+1394480281 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\gamestate.hpp
+
+1394482826 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\playstate.cpp
+	"PlayState.hpp"
+	<iostream>
+	"Game.hpp"
+
+1394481993 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\playstate.hpp
+	"GameState.hpp"
+	<vector>
+	<memory>
+	"TestEntity.hpp"
+	"Projectile.hpp"
+	"Entity.hpp"
+	"Map.hpp"
 

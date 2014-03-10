@@ -16,7 +16,7 @@ public:
     virtual void update(int delta);
     virtual void display();
 
-private:
+protected:
     Game* m_Game;
 };
 

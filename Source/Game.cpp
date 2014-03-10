@@ -7,6 +7,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Shader.hpp"
+#include "PlayState.hpp"
 
 Game::Game(int width, int height)
     : m_Width(width)
@@ -24,6 +25,8 @@ void Game::init()
     m_TestMap.init();
 
     createTestEntity(glm::vec2(32.f * 1.5f), glm::vec2(32.f));
+
+    m_CurrentState = std::make_shared<PlayState>(this);
 }
 
 void Game::createTestEntity(glm::vec2 position, glm::vec2 size)
@@ -69,53 +72,34 @@ void Game::setupMatrices()
 
 void Game::keyPressed(unsigned char key, int x, int y)
 {
-    for (auto entity : m_Entities)
-    {
-        entity->keyPressed(key);
-    }
+    m_CurrentState->keyPressed(key, x, y);
 }
 
 void Game::keyReleased(unsigned char key, int x, int y)
 {
-    for (auto entity : m_Entities)
-    {
-        entity->keyReleased(key);
-    }
+    m_CurrentState->keyReleased(key, x, y);
 }
 
 void Game::mouseEvent(int button, int state, int x, int y)
 {
-
+    m_CurrentState->mouseEvent(button, state, x, y);
 }
 
 void Game::specialKeyPressed(int key, int x, int y)
 {
-    for (auto entity : m_Entities)
-    {
-        entity->specialKeyPressed(key);
-    }
+    m_CurrentState->specialKeyPressed(key, x, y);
 }
 
 void Game::specialKeyReleased(int key, int x, int y)
 {
-    for (auto entity : m_Entities)
-    {
-        entity->specialKeyReleased(key);
-    }
+    m_CurrentState->specialKeyReleased(key, x, y);
 }
 
 void Game::update(int delta)
 {
-    updateEntities(delta);
     addNewEntities();
-}
 
-void Game::updateEntities(int delta)
-{
-    for (auto entity : m_Entities)
-    {
-        entity->update(delta);
-    }
+    m_CurrentState->update(delta);
 }
 
 void Game::addNewEntities()
@@ -130,18 +114,28 @@ void Game::addNewEntities()
 
 void Game::display()
 {
-    m_TestMap.display();
-
-    for (auto entity : m_Entities)
-    {
-        entity->display();
-    }
+    m_CurrentState->display();
 }
 
 void Game::resize(int width, int height)
 {
     m_Width = width;
     m_Height = height;
+}
+
+std::shared_ptr<TestEntity>& Game::getPlayer()
+{
+    return m_TestEntity;
+}
+
+std::vector<std::shared_ptr<Entity>>& Game::getEntities()
+{
+    return m_Entities;
+}
+
+std::vector<std::shared_ptr<Projectile>>& Game::getProjectiles()
+{
+    return m_Projectiles;
 }
 
 glm::mat4 Game::getProjectionMatrix() const
@@ -154,7 +148,7 @@ glm::mat4 Game::getViewMatrix() const
     return m_ViewMatrix;
 }
 
-const Map& Game::getMap() const
+Map& Game::getMap()
 {
     return m_TestMap;
 }
