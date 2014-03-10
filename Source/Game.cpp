@@ -67,11 +67,19 @@ void Game::setupMatrices()
     glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(m_MvpMatrix));
 }
 
-void Game::keyEvent(unsigned char key, int x, int y)
+void Game::keyPressed(unsigned char key, int x, int y)
 {
     for (auto entity : m_Entities)
     {
-        entity->keyEvent(key);
+        entity->keyPressed(key);
+    }
+}
+
+void Game::keyReleased(unsigned char key, int x, int y)
+{
+    for (auto entity : m_Entities)
+    {
+        entity->keyReleased(key);
     }
 }
 

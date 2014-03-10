@@ -51,7 +51,11 @@ void Entity::passMatrixToShader()
     glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(mvpMatrix));
 }
 
-void Entity::keyEvent(unsigned char key)
+void Entity::keyPressed(unsigned char key)
+{
+}
+
+void Entity::keyReleased(unsigned char key)
 {
 }
 

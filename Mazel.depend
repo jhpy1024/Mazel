@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394473834 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394474631 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -549,7 +549,7 @@
 1394036350 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\utils.inl
 	<sstream>
 
-1394393440 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
+1394474660 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\entity.hpp
 	<GL/glew.h>
 	<GL/gl.h>
 	<vector>
@@ -572,7 +572,7 @@
 	<glm/gtx/constants.hpp>
 	<iostream>
 
-1394474471 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
+1394474766 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\testentity.hpp
 	"Entity.hpp"
 
 1390011608 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\constants.hpp

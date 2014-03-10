@@ -26,7 +26,8 @@ public:
     virtual void setupVertexAttrib() = 0;
     virtual void setupColorAttrib() = 0;
 
-    virtual void keyEvent(unsigned char key);
+    virtual void keyPressed(unsigned char key);
+    virtual void keyReleased(unsigned char key);
     virtual void specialKeyPressed(int key);
     virtual void specialKeyReleased(int key);
 

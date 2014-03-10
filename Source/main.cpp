@@ -23,9 +23,14 @@ void specialUp(int key, int x, int y)
     game.specialKeyReleased(key, x, y);
 }
 
-void keyboard(unsigned char key, int x, int y)
+void keyPressed(unsigned char key, int x, int y)
 {
-    game.keyEvent(key, x, y);
+    game.keyPressed(key, x, y);
+}
+
+void keyReleased(unsigned char key, int x, int y)
+{
+    game.keyReleased(key, x, y);
 }
 
 void mouse(int button, int state, int x, int y)
@@ -78,7 +83,8 @@ void setupCallbacks()
 {
     glutDisplayFunc(display);
     glutMouseFunc(mouse);
-    glutKeyboardFunc(keyboard);
+    glutKeyboardFunc(keyPressed);
+    glutKeyboardUpFunc(keyReleased);
     glutSpecialFunc(specialDown);
     glutSpecialUpFunc(specialUp);
     glutIdleFunc(display);

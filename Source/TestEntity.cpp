@@ -65,12 +65,23 @@ void TestEntity::setupColorAttrib()
     glVertexAttribPointer(colorAttrib, 4, GL_FLOAT, GL_FALSE, 0, 0);
 }
 
-void TestEntity::keyEvent(unsigned char key)
+void TestEntity::keyPressed(unsigned char key)
 {
     switch (key)
     {
     case ' ':
         shootIfPossible();
+        break;
+    default:
+        break;
+    }
+}
+
+void TestEntity::keyReleased(unsigned char key)
+{
+    switch (key)
+    {
+    case ' ':
         break;
     default:
         break;

@@ -14,7 +14,8 @@ public:
     void setupVertexAttrib() override;
     void setupColorAttrib() override;
 
-    void keyEvent(unsigned char key) override;
+    void keyPressed(unsigned char key) override;
+    void keyReleased(unsigned char key) override;
     void specialKeyPressed(int key) override;
     void specialKeyReleased(int key) override;
 

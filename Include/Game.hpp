@@ -23,7 +23,8 @@ public:
 
     void init();
 
-    void keyEvent(unsigned char key, int x, int y);
+    void keyPressed(unsigned char key, int x, int y);
+    void keyReleased(unsigned char key, int x, int y);
     void mouseEvent(int button, int state, int x, int y);
     void specialKeyPressed(int key, int x, int y);
     void specialKeyReleased(int key, int x, int y);
