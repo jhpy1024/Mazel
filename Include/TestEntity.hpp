@@ -30,9 +30,9 @@ private:
     void moveLeft();
     void moveRight();
 
-    void shootIfPossible();
-    bool shootDelayOver() const;
-    void shootProjectile();
+    void fireIfPossible();
+    bool fireDelayOver() const;
+    void fireProjectile();
 
     glm::vec2 getBottomLeft() const;
 

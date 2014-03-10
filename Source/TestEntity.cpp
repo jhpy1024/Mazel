@@ -90,7 +90,7 @@ void TestEntity::keyReleased(unsigned char key)
     }
 }
 
-void TestEntity::shootIfPossible()
+void TestEntity::fireIfPossible()
 {
     if (shootDelayOver())
     {
@@ -98,13 +98,13 @@ void TestEntity::shootIfPossible()
     }
 }
 
-bool TestEntity::shootDelayOver() const
+bool TestEntity::fireDelayOver() const
 {
     auto currentTime = glutGet(GLUT_ELAPSED_TIME);
     return currentTime - m_LastTimeFired >= m_FireDelay;
 }
 
-void TestEntity::shootProjectile()
+void TestEntity::fireProjectile()
 {
     auto forwardProjectileRotation = glm::radians<float>(-m_Rotation);
     auto leftProjectileRotation = glm::radians<float>(-m_Rotation - m_ProjectileRotationOffset);
@@ -240,7 +240,7 @@ void TestEntity::update(int delta)
     move(delta);
 
     if (m_Firing)
-        shootIfPossible();
+        fireIfPossible();
 }
 
 void TestEntity::display()
