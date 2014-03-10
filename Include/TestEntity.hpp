@@ -47,7 +47,8 @@ private:
     int m_LastTimeFired;
     const float m_FireDelay;
 
-    float m_ProjectileRotationOffset;
+    const float m_ProjectileRotationOffset;
+    const glm::vec2 m_ProjectileSize;
 };
 
 #endif // TEST_ENTITY_HPP

@@ -20,6 +20,7 @@ TestEntity::TestEntity(Game* game, glm::vec2 position, glm::vec2 size)
     , m_LastTimeFired(0)
     , m_FireDelay(200.f)
     , m_ProjectileRotationOffset(20.f)
+    , m_ProjectileSize(15.f)
 {
 
 }
@@ -96,9 +97,9 @@ void TestEntity::shootProjectile()
     auto leftProjectileRotation = glm::radians<float>(-m_Rotation - m_ProjectileRotationOffset);
     auto rightProjectileRotation = glm::radians<float>(-m_Rotation + m_ProjectileRotationOffset);
 
-    m_Game->createProjectile(m_Position, glm::vec2(15.f), forwardProjectileRotation);
-    m_Game->createProjectile(m_Position, glm::vec2(15.f), leftProjectileRotation);
-    m_Game->createProjectile(m_Position, glm::vec2(15.f), rightProjectileRotation);
+    m_Game->createProjectile(m_Position, m_ProjectileSize, forwardProjectileRotation);
+    m_Game->createProjectile(m_Position, m_ProjectileSize, leftProjectileRotation);
+    m_Game->createProjectile(m_Position, m_ProjectileSize, rightProjectileRotation);
 
     m_LastTimeFired = glutGet(GLUT_ELAPSED_TIME);
 }
