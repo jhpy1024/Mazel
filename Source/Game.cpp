@@ -13,7 +13,6 @@ Game::Game(int width, int height)
     , m_Height(height)
     , m_TestMap("Maps/testMap.txt", this)
     , m_TestEntity(this, glm::vec2(32.f * 1.5f), glm::vec2(32.f))
-    , m_TestProjectile(this, glm::vec2(m_Width / 2.f, m_Height / 2.f), glm::vec2(15.f), (90.f * 3.14f) / 180.f)
 {
 
 }
@@ -25,7 +24,6 @@ void Game::init()
 
     m_TestMap.init();
     m_TestEntity.init();
-    m_TestProjectile.init();
 }
 
 void Game::loadShaders()
@@ -74,14 +72,12 @@ void Game::specialKeyReleased(int key, int x, int y)
 void Game::update(int delta)
 {
     m_TestEntity.update(delta);
-    m_TestProjectile.update(delta);
 }
 
 void Game::display()
 {
     m_TestMap.display();
     m_TestEntity.display();
-    m_TestProjectile.display();
 }
 
 void Game::resize(int width, int height)

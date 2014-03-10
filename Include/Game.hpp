@@ -10,7 +10,6 @@
 #include "ShaderManager.hpp"
 #include "Map.hpp"
 #include "TestEntity.hpp"
-#include "Projectile.hpp"
 
 #include <vector>
 
@@ -55,8 +54,6 @@ private:
     Map m_TestMap;
 
     TestEntity m_TestEntity;
-
-    Projectile m_TestProjectile;
 };
 
 #endif // GAME_HPP
