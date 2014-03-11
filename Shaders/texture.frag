@@ -4,7 +4,7 @@ in vec2 texCoord;
 
 uniform sampler2D in_Texture;
 
-out vec2 out_Color;
+out vec4 out_Color;
 
 void main()
 {

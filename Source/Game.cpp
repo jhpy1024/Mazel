@@ -8,6 +8,7 @@
 
 #include "Shader.hpp"
 #include "PlayState.hpp"
+#include "MenuState.hpp"
 
 Game::Game(int width, int height)
     : m_Width(width)
@@ -26,7 +27,7 @@ void Game::init()
 
     createTestEntity(glm::vec2(32.f * 1.5f), glm::vec2(32.f));
 
-    m_CurrentState = std::make_shared<PlayState>(this);
+    m_CurrentState = std::make_shared<MenuState>(this);
 }
 
 void Game::createTestEntity(glm::vec2 position, glm::vec2 size)
@@ -50,6 +51,8 @@ void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
 void Game::loadShaders()
 {
     m_ShaderManager.addShader("Simple", std::make_shared<Shader>("Shaders/simple.vert", "Shaders/simple.frag"));
+    m_ShaderManager.addShader("Texture", std::make_shared<Shader>("Shaders/texture.vert", "Shaders/texture.frag"));
+
     m_ShaderManager.useShader("Simple");
 }
 
