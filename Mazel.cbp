@@ -48,7 +48,9 @@
 		<Unit filename="Include/Buffer.hpp" />
 		<Unit filename="Include/Entity.hpp" />
 		<Unit filename="Include/Game.hpp" />
+		<Unit filename="Include/GameState.hpp" />
 		<Unit filename="Include/Map.hpp" />
+		<Unit filename="Include/PlayState.hpp" />
 		<Unit filename="Include/Projectile.hpp" />
 		<Unit filename="Include/Shader.hpp" />
 		<Unit filename="Include/ShaderManager.hpp" />
@@ -60,11 +62,14 @@
 		<Unit filename="Source/Buffer.cpp" />
 		<Unit filename="Source/Entity.cpp" />
 		<Unit filename="Source/Game.cpp" />
+		<Unit filename="Source/GameState.cpp" />
 		<Unit filename="Source/Map.cpp" />
+		<Unit filename="Source/PlayState.cpp" />
 		<Unit filename="Source/Projectile.cpp" />
 		<Unit filename="Source/Shader.cpp" />
 		<Unit filename="Source/ShaderManager.cpp" />
 		<Unit filename="Source/TestEntity.cpp" />
+		<Unit filename="Source/Utils.cpp" />
 		<Unit filename="Source/main.cpp" />
 		<Extensions>
 			<code_completion />
