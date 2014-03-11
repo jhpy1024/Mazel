@@ -2,12 +2,15 @@
 
 #include <SOIL.h>
 
+#include <iostream>
+
 #include "Game.hpp"
 
 MenuState::MenuState(Game* game)
     : GameState(game)
     , m_TextureFileName("Textures/menuScreen.png")
 {
+    m_Game->getShaderManager().useShader("Texture");
     createTexture();
 
     setupVertexBuffer();
@@ -18,6 +21,7 @@ MenuState::MenuState(Game* game)
 
 void MenuState::setupVertexBuffer()
 {
+
     auto textureWidth = static_cast<float>(m_TextureWidth);
     auto textureHeight = static_cast<float>(m_TextureHeight);
 
@@ -27,11 +31,13 @@ void MenuState::setupVertexBuffer()
         {
             0.f, 0.f,
             textureWidth, 0.f,
-            0.f, textureHeight,
-            textureWidth, 0.f,
             textureWidth, textureHeight,
-            0.f, textureHeight
+            textureWidth, textureHeight,
+            0.f, textureHeight,
+            0.f, 0.f
         });
+
+    std::cout << "Texture dimensions = (" << textureWidth << ", " << textureHeight << ")" << std::endl;
 }
 
 void MenuState::setupTexCoordBuffer()
@@ -51,8 +57,6 @@ void MenuState::setupTexCoordBuffer()
 
 void MenuState::setupVertexAttrib()
 {
-    m_Game->getShaderManager().useShader("Texture");
-
     m_VertexBuffer.bind();
     auto posAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_Position");
     glEnableVertexAttribArray(posAttrib);
@@ -61,8 +65,6 @@ void MenuState::setupVertexAttrib()
 
 void MenuState::setupTexCoordAttrib()
 {
-    m_Game->getShaderManager().useShader("Texture");
-
     m_TexCoordBuffer.bind();
     auto texCoordAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_TexCoord");
     glEnableVertexAttribArray(texCoordAttrib);
@@ -72,16 +74,20 @@ void MenuState::setupTexCoordAttrib()
 void MenuState::createTexture()
 {
     glGenTextures(1, &m_Texture);
+    glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, m_Texture);
-
-    setTextureWrapping();
-    setTextureFiltering();
-    generateTextureMipmap();
 
     auto textureData = loadTextureData();
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, m_TextureWidth, m_TextureHeight, 0, GL_RGB,
               GL_UNSIGNED_BYTE, textureData);
+
+    setTextureWrapping();
+    setTextureFiltering();
+    generateTextureMipmap();
+
+    auto textureLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_Texture");
+    glUniform1i(textureLocation, 0);
 }
 
 void MenuState::setTextureWrapping()
@@ -119,8 +125,7 @@ void MenuState::update(int delta)
 
 void MenuState::display()
 {
-    auto textureLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_Texture");
-    glUniform1i(textureLocation, 0);
+    m_Game->getShaderManager().useShader("Texture");
 
     updateMatrices();
     setupVertexAttrib();
