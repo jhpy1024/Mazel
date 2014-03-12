@@ -25,6 +25,12 @@ private:
     void setTextureFiltering();
     unsigned char* loadTextureData();
 
+    void createVertexBuffer();
+    void setupVertexAttrib();
+
+    void passTextureToShader();
+    void passMatrixToShader();
+
 private:
     GLuint m_Texture;
     int m_TextureWidth;

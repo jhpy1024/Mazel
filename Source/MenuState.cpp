@@ -14,10 +14,41 @@ MenuState::MenuState(Game* game)
     : GameState(game)
     , m_TextureFileName("Textures/menuScreen.png")
 {
+    m_Game->getShaderManager().useShader("Texture");
+
     createTexture();
+    createVertexBuffer();
+    setupVertexAttrib();
 
+    passTextureToShader();
+    passMatrixToShader();
+}
 
+void MenuState::passMatrixToShader()
+{
+    auto mvpLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_MvpMatrix");
+    glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(glm::mat4(1.f)));
+}
 
+void MenuState::passTextureToShader()
+{
+    auto texLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_Texture");
+    glUniform1i(texLocation, GL_TEXTURE0);
+}
+
+void MenuState::setupVertexAttrib()
+{
+    auto posAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_Position");
+    auto texCoordAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_TexCoord");
+
+    glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), 0);
+    glEnableVertexAttribArray(posAttrib);
+    glVertexAttribPointer(texCoordAttrib, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), (void*)(2*sizeof(float)));
+    glEnableVertexAttribArray(texCoordAttrib);
+}
+
+void MenuState::createVertexBuffer()
+{
     m_VertexBuffer.init();
     m_VertexBuffer.bind();
     m_VertexBuffer.setData(
@@ -29,23 +60,6 @@ MenuState::MenuState(Game* game)
             -1.f, 1.f, 0.f, 0.f,
             -1.f, -1.f, 0.f, 1.f
         });
-
-
-    m_Game->getShaderManager().useShader("Texture");
-
-    auto posAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_Position");
-    auto texCoordAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_TexCoord");
-
-    glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), 0);
-    glEnableVertexAttribArray(posAttrib);
-    glVertexAttribPointer(texCoordAttrib, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), (void*)(2*sizeof(float)));
-    glEnableVertexAttribArray(texCoordAttrib);
-
-    auto texLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_Texture");
-    glUniform1i(texLocation, GL_TEXTURE0);
-
-    auto mvpLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_MvpMatrix");
-    glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(glm::mat4(1.f)));
 }
 
 void MenuState::createTexture()
@@ -66,9 +80,9 @@ void MenuState::createTexture()
     SOIL_free_image_data(textureData);
 }
 
-void MenuState::loadTextureData()
+unsigned char* MenuState::loadTextureData()
 {
-    return SOIL_load_image(textureFileName, &m_TextureWidth, &m_TextureHeight, 0, SOIL_LOAD_RGB);
+    return SOIL_load_image(m_TextureFileName.c_str(), &m_TextureWidth, &m_TextureHeight, 0, SOIL_LOAD_RGB);
 }
 
 void MenuState::setTextureWrapping()
@@ -95,23 +109,12 @@ void MenuState::update(int delta)
 
 void MenuState::display()
 {
-    //glActiveTexture(GL_TEXTURE0);
     m_VertexBuffer.bind();
     m_Game->getShaderManager().useShader("Texture");
 
-    auto posAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_Position");
-    auto texCoordAttrib = m_Game->getShaderManager().getShader("Texture")->getAttribLocation("in_TexCoord");
-
-    auto texLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_Texture");
-    glUniform1i(texLocation, GL_TEXTURE0);
-
-    auto mvpLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_MvpMatrix");
-    glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(glm::mat4(1.f)));
-
-    glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), 0);
-    glEnableVertexAttribArray(posAttrib);
-    glVertexAttribPointer(texCoordAttrib, 2, GL_FLOAT, GL_FALSE, 4*sizeof(float), (void*)(2*sizeof(float)));
-    glEnableVertexAttribArray(texCoordAttrib);
+    setupVertexAttrib();
+    passTextureToShader();
+    passMatrixToShader();
 
     glDrawArrays(GL_TRIANGLES, 0, 12);
 }
