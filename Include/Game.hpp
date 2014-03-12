@@ -48,6 +48,8 @@ public:
     std::vector<std::shared_ptr<Entity>>& getEntities();
     std::vector<std::shared_ptr<Projectile>>& getProjectiles();
 
+    void changeState(std::shared_ptr<GameState> state);
+
 private:
     void loadShaders();
     void setupMatrices();

@@ -68,6 +68,11 @@ void Game::setupMatrices()
     m_MvpMatrix = m_ProjMatrix * m_ViewMatrix * m_ModelMatrix;
 }
 
+void Game::changeState(std::shared_ptr<GameState> state)
+{
+    m_CurrentState = state;
+}
+
 void Game::keyPressed(unsigned char key, int x, int y)
 {
     m_CurrentState->keyPressed(key, x, y);

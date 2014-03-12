@@ -8,6 +8,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "Game.hpp"
+#include "PlayState.hpp"
 
 MenuState::MenuState(Game* game)
     : GameState(game)
@@ -62,7 +63,7 @@ MenuState::MenuState(Game* game)
 
 void MenuState::keyPressed(unsigned char key, int x, int y)
 {
-
+    m_Game->changeState(std::make_shared<PlayState>(m_Game));
 }
 
 void MenuState::update(int delta)
