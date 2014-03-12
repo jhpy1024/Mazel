@@ -24,6 +24,11 @@ MenuState::MenuState(Game* game)
     passMatrixToShader();
 }
 
+MenuState::~MenuState()
+{
+    glDeleteTextures(1, &m_Texture);
+}
+
 void MenuState::passMatrixToShader()
 {
     auto mvpLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_MvpMatrix");

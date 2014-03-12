@@ -13,6 +13,7 @@ class MenuState : public GameState
 {
 public:
     MenuState(Game* game);
+    ~MenuState();
 
     void keyPressed(unsigned char key, int x, int y) override;
 

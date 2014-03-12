@@ -14,6 +14,7 @@ class FinishLevelState : public GameState
 {
 public:
     FinishLevelState(Game* game);
+    ~FinishLevelState();
 
     void keyPressed(unsigned char key, int x, int y) override;
 

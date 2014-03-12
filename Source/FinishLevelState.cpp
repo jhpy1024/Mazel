@@ -20,6 +20,11 @@ FinishLevelState::FinishLevelState(Game* game)
     passMatrixToShader();
 }
 
+FinishLevelState::~FinishLevelState()
+{
+    glDeleteTextures(1, &m_Texture);
+}
+
 void FinishLevelState::passMatrixToShader()
 {
     auto mvpLocation = m_Game->getShaderManager().getShader("Texture")->getUniformLocation("in_MvpMatrix");
