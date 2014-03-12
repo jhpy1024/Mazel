@@ -27,7 +27,7 @@ void Game::init()
 
     createTestEntity(glm::vec2(32.f * 1.5f), glm::vec2(32.f));
 
-    m_CurrentState = std::make_shared<PlayState>(this);
+    m_CurrentState = std::make_shared<MenuState>(this);
 }
 
 void Game::createTestEntity(glm::vec2 position, glm::vec2 size)

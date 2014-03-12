@@ -53,7 +53,7 @@
 	<vector>
 	<memory>
 
-1394638121 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394639151 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
@@ -560,13 +560,13 @@
 	<glm/glm.hpp>
 	"Buffer.hpp"
 
-1394474678 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
+1394638203 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
 	"Entity.hpp"
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394478897 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
+1394638256 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\testentity.cpp
 	"TestEntity.hpp"
 	"Game.hpp"
 	<GL/freeglut.h>
@@ -596,7 +596,7 @@
 	<glm/glm.hpp>
 	"Entity.hpp"
 
-1394474092 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\projectile.cpp
+1394638276 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\projectile.cpp
 	"Projectile.hpp"
 	<GL/freeglut.h>
 	"Game.hpp"
@@ -620,13 +620,15 @@
 	"Entity.hpp"
 	"Map.hpp"
 
-1394637970 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\menustate.cpp
+1394640990 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\menustate.cpp
 	"MenuState.hpp"
 	<SOIL.h>
 	<iostream>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394637890 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\menustate.hpp
+1394638692 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\menustate.hpp
 	"GameState.hpp"
 	"Buffer.hpp"
 	<GL/glew.h>

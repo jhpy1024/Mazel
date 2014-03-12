@@ -18,6 +18,11 @@ public:
 
     void update(int delta) override;
     void display() override;
+
+private:
+    GLuint m_Texture;
+
+    Buffer m_VertexBuffer;
 };
 
 #endif // MENU_STATE_HPP
