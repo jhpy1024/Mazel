@@ -6,14 +6,20 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Utils.hpp"
 #include "Shader.hpp"
 #include "MenuState.hpp"
+#include "PlayState.hpp"
 #include "FinishLevelState.hpp"
 
 Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
-    , m_TestMap("Maps/testMap.txt", this)
+    , m_CurrentMap(1)
+    , m_NumMaps(3)
+    , m_TestMap("Maps/map" + util::toString(m_CurrentMap) + ".txt", this)
+    , m_PlayerStartPosition(32.f * 1.5f)
+    , m_PlayerSize(32.f)
 {
 
 }
@@ -25,7 +31,7 @@ void Game::init()
 
     m_TestMap.init();
 
-    createTestEntity(glm::vec2(32.f * 1.5f), glm::vec2(32.f));
+    createTestEntity(m_PlayerStartPosition, m_PlayerSize);
 
     m_CurrentState = std::make_shared<MenuState>(this);
 }
@@ -51,6 +57,36 @@ void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
 void Game::finishedLevel()
 {
     m_CurrentState = std::make_shared<FinishLevelState>(this);
+}
+
+void Game::nextLevel()
+{
+    resetEntities();
+    changeMapToNextLevel();
+
+    m_CurrentState = std::make_shared<PlayState>(this);
+}
+
+void Game::changeMapToNextLevel()
+{
+    ++m_CurrentMap;
+    if (m_CurrentMap <= m_NumMaps)
+    {
+        m_TestMap = Map("Maps/map" + util::toString(m_CurrentMap) + ".txt", this);
+        m_TestMap.init();
+    }
+    else
+    {
+        std::cout << "Game finished! Congrats." << std::endl;
+    }
+}
+
+void Game::resetEntities()
+{
+    m_Entities.clear();
+    m_Projectiles.clear();
+
+    createTestEntity(m_PlayerStartPosition, m_PlayerSize);
 }
 
 void Game::loadShaders()

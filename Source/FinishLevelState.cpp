@@ -96,7 +96,7 @@ void FinishLevelState::setTextureFiltering()
 
 void FinishLevelState::keyPressed(unsigned char key, int x, int y)
 {
-
+    m_Game->nextLevel();
 }
 
 void FinishLevelState::update(int delta)

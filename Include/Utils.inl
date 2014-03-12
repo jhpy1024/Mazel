@@ -12,4 +12,14 @@ namespace util
 
         return result;
     }
+
+    template <typename T>
+    std::string toString(T var)
+    {
+        std::stringstream ss;
+
+        ss << var;
+
+        return ss.str();
+    }
 }

@@ -51,12 +51,16 @@ public:
     void changeState(std::shared_ptr<GameState> state);
 
     void finishedLevel();
+    void nextLevel();
 
 private:
     void loadShaders();
     void setupMatrices();
 
     void addNewEntities();
+    void resetEntities();
+
+    void changeMapToNextLevel();
 
 private:
     int m_Width;
@@ -69,6 +73,8 @@ private:
 
     ShaderManager m_ShaderManager;
 
+    int m_CurrentMap;
+    const int m_NumMaps;
     Map m_TestMap;
 
     std::shared_ptr<TestEntity> m_TestEntity;
@@ -78,6 +84,9 @@ private:
     std::vector<std::shared_ptr<Projectile>> m_Projectiles;
 
     std::shared_ptr<GameState> m_CurrentState;
+
+    const glm::vec2 m_PlayerStartPosition;
+    const glm::vec2 m_PlayerSize;
 };
 
 #endif // GAME_HPP
