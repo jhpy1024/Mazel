@@ -8,6 +8,7 @@
 
 #include "Shader.hpp"
 #include "MenuState.hpp"
+#include "FinishLevelState.hpp"
 
 Game::Game(int width, int height)
     : m_Width(width)
@@ -49,7 +50,7 @@ void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
 
 void Game::finishedLevel()
 {
-    std::cout << "Yay, you finished the level!" << std::endl;
+    m_CurrentState = std::make_shared<FinishLevelState>(this);
 }
 
 void Game::loadShaders()

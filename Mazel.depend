@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394654770 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394655367 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -605,7 +605,7 @@
 
 1394480281 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\gamestate.hpp
 
-1394654755 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\playstate.cpp
+1394655066 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\playstate.cpp
 	"PlayState.hpp"
 	<iostream>
 	"Game.hpp"
