@@ -7,7 +7,6 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Shader.hpp"
-#include "PlayState.hpp"
 #include "MenuState.hpp"
 
 Game::Game(int width, int height)
