@@ -41,15 +41,23 @@ void Map::addTileTypesToMap()
 
     tile.color = glm::vec4(0.1f, 0.1f, 0.1f, 1.f);
     tile.isCollidable = true;
+    tile.isFinishTile = false;
     m_TileTypes[DarkTile] = tile;
 
     tile.color = glm::vec4(0.3f, 0.3f, 0.3f, 1.f);
     tile.isCollidable = false;
+    tile.isFinishTile = false;
     m_TileTypes[GrayTile] = tile;
 
     tile.color = glm::vec4(1.f, 1.f, 1.f, 1.f);
     tile.isCollidable = false;
+    tile.isFinishTile = false;
     m_TileTypes[WhiteTile] = tile;
+
+    tile.color = glm::vec4(1.f, 0.f, 1.f, 1.f);
+    tile.isCollidable = false;
+    tile.isFinishTile = true;
+    m_TileTypes[FinishTile] = tile;
 }
 
 void Map::display()

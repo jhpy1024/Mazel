@@ -25,6 +25,9 @@ public:
     void display() override;
 
 private:
+    void checkCollisions();
+    void checkIfFinishedLevel();
+
     void updateEntities(int delta);
 
     void displayMap();

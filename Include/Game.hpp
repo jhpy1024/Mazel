@@ -50,6 +50,8 @@ public:
 
     void changeState(std::shared_ptr<GameState> state);
 
+    void finishedLevel();
+
 private:
     void loadShaders();
     void setupMatrices();

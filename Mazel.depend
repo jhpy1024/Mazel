@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394643245 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394654770 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -53,14 +53,13 @@
 	<vector>
 	<memory>
 
-1394643271 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394654900 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtc/type_ptr.hpp>
 	"Shader.hpp"
-	"PlayState.hpp"
 	"MenuState.hpp"
 
 1393966071 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
@@ -524,7 +523,7 @@
 	<cstdarg>
 	<cstdio>
 
-1394394571 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
+1394652815 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\map.hpp
 	<string>
 	<vector>
 	<map>
@@ -535,7 +534,7 @@
 	"Tile.hpp"
 	"Buffer.hpp"
 
-1394638078 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
+1394654973 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\map.cpp
 	"Map.hpp"
 	<fstream>
 	<iostream>
@@ -581,7 +580,7 @@
 1390011608 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\glm\glm\gtx\constants.hpp
 	"../gtc/constants.hpp"
 
-1394378912 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\tile.hpp
+1394654871 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\tile.hpp
 	<glm/glm.hpp>
 
 1394393981 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\buffer.hpp
@@ -606,12 +605,12 @@
 
 1394480281 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\gamestate.hpp
 
-1394483055 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\playstate.cpp
+1394654755 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\playstate.cpp
 	"PlayState.hpp"
 	<iostream>
 	"Game.hpp"
 
-1394482993 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\playstate.hpp
+1394654549 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\playstate.hpp
 	"GameState.hpp"
 	<vector>
 	<memory>

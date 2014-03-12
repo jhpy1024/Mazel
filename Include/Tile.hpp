@@ -5,7 +5,8 @@
 
 struct Tile
 {
-    bool isCollidable;
+    bool isCollidable = false;
+    bool isFinishTile = false;
 
     glm::vec4 color;
 };

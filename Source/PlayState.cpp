@@ -49,6 +49,22 @@ void PlayState::specialKeyReleased(int key, int x, int y)
 void PlayState::update(int delta)
 {
     updateEntities(delta);
+    checkCollisions();
+}
+
+void PlayState::checkCollisions()
+{
+    checkIfFinishedLevel();
+}
+
+void PlayState::checkIfFinishedLevel()
+{
+    auto playerPos = m_TestEntity->getPosition();
+    auto playerPosCenter = playerPos - (m_TestEntity->getSize() / 2.f);
+    auto tilePlayerIsOn = m_Game->getMap().getTileAtPixelPos(playerPosCenter);
+
+    if (tilePlayerIsOn.isFinishTile)
+        m_Game->finishedLevel();
 }
 
 void PlayState::updateEntities(int delta)

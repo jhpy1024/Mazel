@@ -47,6 +47,11 @@ void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
     m_Projectiles.push_back(projectile);
 }
 
+void Game::finishedLevel()
+{
+    std::cout << "Yay, you finished the level!" << std::endl;
+}
+
 void Game::loadShaders()
 {
     m_ShaderManager.addShader("Simple", std::make_shared<Shader>("Shaders/simple.vert", "Shaders/simple.frag"));

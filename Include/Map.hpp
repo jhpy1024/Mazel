@@ -19,6 +19,7 @@ enum TileType
     DarkTile,
     GrayTile,
     WhiteTile,
+    FinishTile,
 };
 
 class Game;
