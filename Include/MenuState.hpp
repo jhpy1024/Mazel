@@ -20,7 +20,16 @@ public:
     void display() override;
 
 private:
+    void createTexture();
+    void setTextureWrapping();
+    void setTextureFiltering();
+    unsigned char* loadTextureData();
+
+private:
     GLuint m_Texture;
+    int m_TextureWidth;
+    int m_TextureHeight;
+    const std::string m_TextureFileName;
 
     Buffer m_VertexBuffer;
 };

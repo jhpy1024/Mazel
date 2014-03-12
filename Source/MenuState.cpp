@@ -12,24 +12,11 @@
 
 MenuState::MenuState(Game* game)
     : GameState(game)
+    , m_TextureFileName("Textures/menuScreen.png")
 {
-    glActiveTexture(GL_TEXTURE0);
+    createTexture();
 
-    glGenTextures(1, &m_Texture);
-    glBindTexture(GL_TEXTURE_2D, m_Texture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    glGenerateMipmap(GL_TEXTURE_2D);
 
-    int textureWidth;
-    int textureHeight;
-    unsigned char* textureData = SOIL_load_image("menuScreen.png", &textureWidth, &textureHeight, 0, SOIL_LOAD_RGB);
-
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, textureData);
-
-    SOIL_free_image_data(textureData);
 
     m_VertexBuffer.init();
     m_VertexBuffer.bind();
@@ -61,6 +48,41 @@ MenuState::MenuState(Game* game)
     glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(glm::mat4(1.f)));
 }
 
+void MenuState::createTexture()
+{
+    glActiveTexture(GL_TEXTURE0);
+    glGenTextures(1, &m_Texture);
+    glBindTexture(GL_TEXTURE_2D, m_Texture);
+
+    setTextureWrapping();
+    setTextureFiltering();
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    auto textureData = loadTextureData();
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, m_TextureWidth, m_TextureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, textureData);
+
+    SOIL_free_image_data(textureData);
+}
+
+void MenuState::loadTextureData()
+{
+    return SOIL_load_image(textureFileName, &m_TextureWidth, &m_TextureHeight, 0, SOIL_LOAD_RGB);
+}
+
+void MenuState::setTextureWrapping()
+{
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+}
+
+void MenuState::setTextureFiltering()
+{
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+}
+
 void MenuState::keyPressed(unsigned char key, int x, int y)
 {
     m_Game->changeState(std::make_shared<PlayState>(m_Game));
@@ -73,7 +95,7 @@ void MenuState::update(int delta)
 
 void MenuState::display()
 {
-    glActiveTexture(GL_TEXTURE0);
+    //glActiveTexture(GL_TEXTURE0);
     m_VertexBuffer.bind();
     m_Game->getShaderManager().useShader("Texture");
 
@@ -92,6 +114,4 @@ void MenuState::display()
     glEnableVertexAttribArray(texCoordAttrib);
 
     glDrawArrays(GL_TRIANGLES, 0, 12);
-
-    //std::cout << glGetError() << std::endl;
 }
