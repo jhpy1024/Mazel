@@ -43,6 +43,8 @@ void Entity::updateMatrices()
 
 void Entity::passMatrixToShader()
 {
+    m_Game->getShaderManager().useShader("Simple");
+
     auto projectionMatrix = m_Game->getProjectionMatrix();
     auto viewMatrix = m_Game->getViewMatrix();
 

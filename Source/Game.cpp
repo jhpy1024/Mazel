@@ -27,7 +27,7 @@ void Game::init()
 
     createTestEntity(glm::vec2(32.f * 1.5f), glm::vec2(32.f));
 
-    m_CurrentState = std::make_shared<MenuState>(this);
+    m_CurrentState = std::make_shared<PlayState>(this);
 }
 
 void Game::createTestEntity(glm::vec2 position, glm::vec2 size)
@@ -52,8 +52,6 @@ void Game::loadShaders()
 {
     m_ShaderManager.addShader("Simple", std::make_shared<Shader>("Shaders/simple.vert", "Shaders/simple.frag"));
     m_ShaderManager.addShader("Texture", std::make_shared<Shader>("Shaders/texture.vert", "Shaders/texture.frag"));
-
-    m_ShaderManager.useShader("Simple");
 }
 
 void Game::setupMatrices()
@@ -68,9 +66,6 @@ void Game::setupMatrices()
     m_ViewMatrix = glm::mat4(1.f);
     m_ModelMatrix = glm::mat4(1.f);
     m_MvpMatrix = m_ProjMatrix * m_ViewMatrix * m_ModelMatrix;
-
-    auto mvpLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_MvpMatrix");
-    glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(m_MvpMatrix));
 }
 
 void Game::keyPressed(unsigned char key, int x, int y)

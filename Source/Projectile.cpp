@@ -61,6 +61,8 @@ void Projectile::update(int delta)
 
 void Projectile::display()
 {
+    m_Game->getShaderManager().useShader("Simple");
+
     updateMatrices();
     setupVertexAttrib();
     setupColorAttrib();

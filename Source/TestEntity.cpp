@@ -245,6 +245,8 @@ void TestEntity::update(int delta)
 
 void TestEntity::display()
 {
+    m_Game->getShaderManager().useShader("Simple");
+
     updateMatrices();
     setupVertexAttrib();
     setupColorAttrib();

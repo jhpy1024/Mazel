@@ -20,11 +20,11 @@ Map::Map(const std::string& file, Game* game)
 
 void Map::init()
 {
+    m_Game->getShaderManager().useShader("Simple");
+
     addTileTypesToMap();
 
     parseFile();
-
-    m_Game->getShaderManager().useShader("Simple");
 
     setupVertices();
     setupVertexBuffer();
@@ -54,6 +54,8 @@ void Map::addTileTypesToMap()
 
 void Map::display()
 {
+    m_Game->getShaderManager().useShader("Simple");
+
     setModelMatrix();
     setupVertexAttrib();
     setupColorAttrib();
