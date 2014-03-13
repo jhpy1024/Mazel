@@ -34,7 +34,7 @@ void Game::init()
 
     createTestEntity(m_PlayerStartPosition, m_PlayerSize);
 
-    m_CurrentState = std::make_shared<WinGameState>(this);
+    m_CurrentState = std::make_shared<MenuState>(this);
 }
 
 void Game::createTestEntity(glm::vec2 position, glm::vec2 size)
@@ -55,9 +55,17 @@ void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
     m_Projectiles.push_back(projectile);
 }
 
+void Game::startPlaying()
+{
+    changeState(std::make_shared<PlayState>(this));
+}
+
 void Game::finishedLevel()
 {
-    m_CurrentState = std::make_shared<FinishLevelState>(this);
+    if (m_CurrentMap == m_NumMaps)
+        changeState(std::make_shared<WinGameState>(this));
+    else
+        changeState(std::make_shared<FinishLevelState>(this));
 }
 
 void Game::nextLevel()
@@ -65,21 +73,17 @@ void Game::nextLevel()
     resetEntities();
     changeMapToNextLevel();
 
-    m_CurrentState = std::make_shared<PlayState>(this);
+    changeState(std::make_shared<PlayState>(this));
 }
 
 void Game::changeMapToNextLevel()
 {
     ++m_CurrentMap;
-    if (m_CurrentMap <= m_NumMaps)
-    {
-        m_TestMap = Map("Maps/map" + util::toString(m_CurrentMap) + ".txt", this);
-        m_TestMap.init();
-    }
-    else
-    {
-        std::cout << "Game finished! Congrats." << std::endl;
-    }
+
+    assert(m_CurrentMap <= m_NumMaps);
+
+    m_TestMap = Map("Maps/map" + util::toString(m_CurrentMap) + ".txt", this);
+    m_TestMap.init();
 }
 
 void Game::resetEntities()

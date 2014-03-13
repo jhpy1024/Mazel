@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394655751 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394725782 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -623,7 +623,7 @@
 	"Entity.hpp"
 	"Map.hpp"
 
-1394725083 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\menustate.cpp
+1394725769 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\menustate.cpp
 	"MenuState.hpp"
 	<SOIL.h>
 	<iostream>
@@ -652,5 +652,20 @@
 	<string>
 	<GL/glew.h>
 	<GL/gl.h>
+	"Buffer.hpp"
+
+1394725405 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\wingamestate.cpp
+	"WinGameState.hpp"
+	<SOIL.h>
+	<iostream>
+	<glm/gtc/type_ptr.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"Game.hpp"
+
+1394725666 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\wingamestate.hpp
+	"GameState.hpp"
+	<GL/glew.h>
+	<GL/gl.h>
+	<string>
 	"Buffer.hpp"
 

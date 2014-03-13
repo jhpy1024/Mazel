@@ -104,7 +104,7 @@ void MenuState::setTextureFiltering()
 
 void MenuState::keyPressed(unsigned char key, int x, int y)
 {
-    m_Game->changeState(std::make_shared<PlayState>(m_Game));
+    m_Game->startPlaying();
 }
 
 void MenuState::update(int delta)

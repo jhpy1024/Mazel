@@ -50,6 +50,7 @@ public:
 
     void changeState(std::shared_ptr<GameState> state);
 
+    void startPlaying();
     void finishedLevel();
     void nextLevel();
 
