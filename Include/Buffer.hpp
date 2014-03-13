@@ -23,6 +23,8 @@ private:
     GLuint m_Buffer;
 
     int m_DataSize;
+
+    bool m_IsInitialized;
 };
 
 #endif // BUFFER_HPP

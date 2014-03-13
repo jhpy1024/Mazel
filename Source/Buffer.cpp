@@ -1,6 +1,9 @@
 #include "Buffer.hpp"
 
+#include <cassert>
+
 Buffer::Buffer()
+    : m_IsInitialized(false)
 {
 
 }
@@ -8,6 +11,8 @@ Buffer::Buffer()
 void Buffer::init()
 {
     glGenBuffers(1, &m_Buffer);
+
+    m_IsInitialized = true;
 }
 
 Buffer::~Buffer()
@@ -22,6 +27,8 @@ void Buffer::bind()
 
 void Buffer::setData(const std::vector<float>& data)
 {
+    assert(m_IsInitialized);
+
     bind();
 
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * data.size(), &data[0], GL_STATIC_DRAW);

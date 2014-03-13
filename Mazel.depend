@@ -562,7 +562,7 @@
 	<glm/glm.hpp>
 	"Buffer.hpp"
 
-1394638203 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
+1394656592 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\entity.cpp
 	"Entity.hpp"
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
@@ -586,13 +586,14 @@
 1394654871 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\tile.hpp
 	<glm/glm.hpp>
 
-1394393981 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\buffer.hpp
+1394724904 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\buffer.hpp
 	<vector>
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394393995 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\buffer.cpp
+1394724933 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\buffer.cpp
 	"Buffer.hpp"
+	<cassert>
 
 1394397408 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\projectile.hpp
 	<glm/glm.hpp>
@@ -622,7 +623,7 @@
 	"Entity.hpp"
 	"Map.hpp"
 
-1394651384 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\menustate.cpp
+1394725083 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\menustate.cpp
 	"MenuState.hpp"
 	<SOIL.h>
 	<iostream>
@@ -640,7 +641,7 @@
 
 1215450808 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\libraries\soil\src\soil.h
 
-1394655483 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\finishlevelstate.cpp
+1394656696 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\finishlevelstate.cpp
 	"FinishLevelState.hpp"
 	<glm/gtc/type_ptr.hpp>
 	<SOIL.h>

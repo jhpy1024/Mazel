@@ -50,6 +50,7 @@
 		</Compiler>
 		<Unit filename="Include/Buffer.hpp" />
 		<Unit filename="Include/Entity.hpp" />
+		<Unit filename="Include/FinishLevelState.hpp" />
 		<Unit filename="Include/Game.hpp" />
 		<Unit filename="Include/GameState.hpp" />
 		<Unit filename="Include/Map.hpp" />
@@ -59,6 +60,7 @@
 		<Unit filename="Include/Shader.hpp" />
 		<Unit filename="Include/ShaderManager.hpp" />
 		<Unit filename="Include/TestEntity.hpp" />
+		<Unit filename="Include/Tile.hpp" />
 		<Unit filename="Include/Utils.hpp" />
 		<Unit filename="Include/Utils.inl" />
 		<Unit filename="Shaders/simple.frag" />
@@ -67,6 +69,7 @@
 		<Unit filename="Shaders/texture.vert" />
 		<Unit filename="Source/Buffer.cpp" />
 		<Unit filename="Source/Entity.cpp" />
+		<Unit filename="Source/FinishLevelState.cpp" />
 		<Unit filename="Source/Game.cpp" />
 		<Unit filename="Source/GameState.cpp" />
 		<Unit filename="Source/Map.cpp" />
