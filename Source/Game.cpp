@@ -10,6 +10,7 @@
 #include "Shader.hpp"
 #include "MenuState.hpp"
 #include "PlayState.hpp"
+#include "WinGameState.hpp"
 #include "FinishLevelState.hpp"
 
 Game::Game(int width, int height)
@@ -33,7 +34,7 @@ void Game::init()
 
     createTestEntity(m_PlayerStartPosition, m_PlayerSize);
 
-    m_CurrentState = std::make_shared<MenuState>(this);
+    m_CurrentState = std::make_shared<WinGameState>(this);
 }
 
 void Game::createTestEntity(glm::vec2 position, glm::vec2 size)
