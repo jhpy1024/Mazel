@@ -103,7 +103,17 @@ void WinGameState::setTextureFiltering()
 
 void WinGameState::keyPressed(unsigned char key, int x, int y)
 {
-
+    switch (key)
+    {
+    case ' ':
+        m_Game->restartGame();
+        break;
+    case 27:
+        m_Game->quit();
+        break;
+    default:
+        break;
+    }
 }
 
 void WinGameState::update(int delta)

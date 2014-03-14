@@ -13,6 +13,8 @@
 #include "WinGameState.hpp"
 #include "FinishLevelState.hpp"
 
+#include <GL/freeglut.h>
+
 Game::Game(int width, int height)
     : m_Width(width)
     , m_Height(height)
@@ -58,6 +60,21 @@ void Game::createProjectile(glm::vec2 position, glm::vec2 size, float angle)
 void Game::startPlaying()
 {
     changeState(std::make_shared<PlayState>(this));
+}
+
+void Game::restartGame()
+{
+    resetEntities();
+
+    m_CurrentMap = 0;
+    changeMapToNextLevel();
+
+    startPlaying();
+}
+
+void Game::quit()
+{
+    glutLeaveMainLoop();
 }
 
 void Game::finishedLevel()

@@ -40,7 +40,7 @@
 	<GL/glew.h>
 	<GL/gl.h>
 
-1394725782 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
+1394726735 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\game.hpp
 	<glm/glm.hpp>
 	<GL/glew.h>
 	<GL/gl.h>
@@ -53,7 +53,7 @@
 	<vector>
 	<memory>
 
-1394656326 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
+1394726922 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\game.cpp
 	"Game.hpp"
 	<iostream>
 	<memory>
@@ -63,7 +63,9 @@
 	"Shader.hpp"
 	"MenuState.hpp"
 	"PlayState.hpp"
+	"WinGameState.hpp"
 	"FinishLevelState.hpp"
+	<GL/freeglut.h>
 
 1393966071 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\shadermanager.cpp
 	"ShaderManager.hpp"
@@ -654,7 +656,7 @@
 	<GL/gl.h>
 	"Buffer.hpp"
 
-1394725405 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\wingamestate.cpp
+1394727039 source:c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\source\wingamestate.cpp
 	"WinGameState.hpp"
 	<SOIL.h>
 	<iostream>
@@ -662,7 +664,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	"Game.hpp"
 
-1394725666 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\wingamestate.hpp
+1394726572 c:\users\jhpy1024\documents\visual studio 2012\projects\mazel\include\wingamestate.hpp
 	"GameState.hpp"
 	<GL/glew.h>
 	<GL/gl.h>

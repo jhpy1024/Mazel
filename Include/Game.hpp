@@ -53,6 +53,8 @@ public:
     void startPlaying();
     void finishedLevel();
     void nextLevel();
+    void restartGame();
+    void quit();
 
 private:
     void loadShaders();
