@@ -6,8 +6,7 @@ uniform mat4 in_MvpMatrix;
 
 out vec4 color;
 
-//uniform vec2 in_PlayerPosition;
-uniform float in_DistanceToPlayer;
+uniform vec2 in_PlayerPosition;
 out float distanceToPlayer;
 
 void main()
@@ -15,6 +14,5 @@ void main()
     gl_Position = in_MvpMatrix * vec4(in_Position, 0.0, 1.0);
     color = in_Color;
 
-    //distanceToPlayer = distance(in_PlayerPosition, vec2(gl_Position.xy));
-    distanceToPlayer = in_DistanceToPlayer;
+    distanceToPlayer = distance(in_PlayerPosition, vec2(gl_Position.xy));
 }

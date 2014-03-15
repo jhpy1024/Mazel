@@ -166,6 +166,11 @@ void Game::update(int delta)
     addNewEntities();
 
     m_CurrentState->update(delta);
+
+    auto playerPos = m_TestEntity->getPosition();
+    m_ShaderManager.useShader("Simple");
+    auto posUniformLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_PlayerPosition");
+    glUniform2fv(posUniformLocation, 1, glm::value_ptr(playerPos));
 }
 
 void Game::addNewEntities()

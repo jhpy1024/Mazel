@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include <glm/gtc/type_ptr.hpp>
+
 #include "Game.hpp"
 
 PlayState::PlayState(Game* game)
@@ -50,6 +52,7 @@ void PlayState::update(int delta)
 {
     updateEntities(delta);
     checkCollisions();
+
 }
 
 void PlayState::checkCollisions()

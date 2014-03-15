@@ -7,10 +7,12 @@ in float distanceToPlayer;
 
 void main()
 {
-    out_Color = color;
-
-    if (distanceToPlayer >= 300.f)
+    if (distanceToPlayer == 0.0)
     {
-        out_Color *= 0.3f;
+        out_Color = color;
+    }
+    else
+    {
+        out_Color = color * (1.0 / (distanceToPlayer / 100.0));
     }
 }
