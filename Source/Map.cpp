@@ -63,11 +63,15 @@ void Map::addTileTypesToMap()
 void Map::display()
 {
     m_Game->getShaderManager().useShader("Simple");
+    auto distanceLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_DistanceToPlayer");
+    glUniform1f(distanceLocation, 0.f);
 
     setModelMatrix();
     setupVertexAttrib();
     setupColorAttrib();
     glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
+
+    glUniform1f(distanceLocation, 0.f);
 }
 
 void Map::setModelMatrix()
