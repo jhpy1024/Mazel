@@ -167,6 +167,11 @@ void Game::update(int delta)
 
     m_CurrentState->update(delta);
 
+    passPlayerPosToShader():
+}
+
+void Game::passPlayerPosToShader()
+{
     auto playerPos = m_TestEntity->getPosition();
     m_ShaderManager.useShader("Simple");
     auto posUniformLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_PlayerPosition");

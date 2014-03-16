@@ -65,6 +65,8 @@ private:
 
     void changeMapToNextLevel();
 
+    void passPlayerPosToShader();
+
 private:
     int m_Width;
     int m_Height;
