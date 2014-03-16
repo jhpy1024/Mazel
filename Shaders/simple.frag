@@ -13,6 +13,6 @@ void main()
     }
     else
     {
-        out_Color = color * (1.0 / (distanceToPlayer / 100.0));
+        out_Color = color * (1.0 / (distanceToPlayer / 20.0));
     }
 }
