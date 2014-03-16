@@ -5,14 +5,16 @@ out vec4 out_Color;
 
 in float distanceToPlayer;
 
+flat in int lightingEnabled;
+
 void main()
 {
-    if (distanceToPlayer == 0.0)
-    {
-        out_Color = color;
-    }
-    else
-    {
-        out_Color = color * (1.0 / (distanceToPlayer / 20.0));
-    }
+	if (lightingEnabled == 1)
+	{
+		out_Color = color * (1.0 / (distanceToPlayer / 30.0));
+	}
+	else
+	{
+		out_Color = color;
+	}
 }

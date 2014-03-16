@@ -9,10 +9,15 @@ out vec4 color;
 uniform vec2 in_PlayerPosition;
 out float distanceToPlayer;
 
+uniform int in_LightingEnabled;
+flat out int lightingEnabled;
+
 void main()
 {
     gl_Position = in_MvpMatrix * vec4(in_Position, 0.0, 1.0);
     color = in_Color;
 
     distanceToPlayer = distance(in_PlayerPosition, vec2(in_Position.xy));
+	
+	lightingEnabled = in_LightingEnabled;
 }

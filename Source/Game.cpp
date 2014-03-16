@@ -168,7 +168,6 @@ void Game::update(int delta)
     m_CurrentState->update(delta);
 
     auto playerPos = m_TestEntity->getPosition();
-    std::cout << "Player position = (" << playerPos.x << ", " << playerPos.y << ")" << std::endl;
     m_ShaderManager.useShader("Simple");
     auto posUniformLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_PlayerPosition");
     glUniform2fv(posUniformLocation, 1, glm::value_ptr(playerPos));

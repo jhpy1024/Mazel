@@ -33,6 +33,9 @@ private:
     void displayMap();
     void displayEntities();
 
+    void enableLighting();
+    void disableLighting();
+
 private:
     std::shared_ptr<TestEntity>& m_TestEntity;
     std::vector<std::shared_ptr<Entity>>& m_Entities;

@@ -80,8 +80,24 @@ void PlayState::updateEntities(int delta)
 
 void PlayState::display()
 {
+    enableLighting();
     displayMap();
+    disableLighting();
     displayEntities();
+}
+
+void PlayState::enableLighting()
+{
+    m_Game->getShaderManager().useShader("Simple");
+    auto lightingEnabledLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_LightingEnabled");
+    glUniform1i(lightingEnabledLocation, 1);
+}
+
+void PlayState::disableLighting()
+{
+    m_Game->getShaderManager().useShader("Simple");
+    auto lightingEnabledLocation = m_Game->getShaderManager().getShader("Simple")->getUniformLocation("in_LightingEnabled");
+    glUniform1i(lightingEnabledLocation, 0);
 }
 
 void PlayState::displayMap()
