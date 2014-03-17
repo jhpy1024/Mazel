@@ -11,7 +11,7 @@ void main()
 {
 	if (lightingEnabled == 1)
 	{
-		out_Color = color * (1.0 / (distanceToPlayer / 20.0));
+		out_Color = color * (1.0 / (distanceToPlayer / 50.0)) * vec4(1.0, 0.0, 0.0, 1.0);
 	}
 	else
 	{
