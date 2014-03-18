@@ -167,7 +167,7 @@ void Game::update(int delta)
 
     m_CurrentState->update(delta);
 
-    passPlayerPosToShader():
+    passPlayerPosToShader();
 }
 
 void Game::passPlayerPosToShader()
@@ -176,6 +176,12 @@ void Game::passPlayerPosToShader()
     m_ShaderManager.useShader("Simple");
     auto posUniformLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_PlayerPosition");
     glUniform2fv(posUniformLocation, 1, glm::value_ptr(playerPos));
+
+    m_ViewMatrix = glm::translate(glm::mat4(1.f), glm::vec3(m_Width / 2.f - playerPos.x, m_Height / 2.f - playerPos.y, 0.f));
+    m_MvpMatrix = m_ProjMatrix * m_ViewMatrix * m_ModelMatrix;
+
+    auto mvpLocation = m_ShaderManager.getShader("Simple")->getUniformLocation("in_MvpMatrix");
+    glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(m_MvpMatrix));
 }
 
 void Game::addNewEntities()
